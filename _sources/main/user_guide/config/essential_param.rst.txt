@@ -1,0 +1,316 @@
+Essential Parameters
+=====================
+
+.. py:data:: exp_cfg
+
+    存储路径配置
+
+    :Parameters:
+         
+    exp_folder : str
+        The main directory 
+
+    exp_subfolder : str
+        The subdirectory name
+
+    exp_name : str
+        The exp directory name
+
+    :Example:
+
+    .. code-block:: python
+
+        exp_cfg = {
+            'exp_folder': '~/mnt/gen',
+            'exp_subfolder': 'inday_data',
+            'exp_name': 'exp1',
+        }
+
+
+.. py:data:: global_cfg
+
+    全局设置
+
+    :Parameters:
+
+    freq : str {'inday', 'daily'}
+        The frequency of the data
+
+        * inday
+            for intraday data
+        * daily
+            for daily data, factor should work on next day
+    
+    num_threads : int
+        The number of threads to use in calc factor process
+
+    blacklist : bool
+        Whether to use the blacklist. The default is ``False``. If set to ``True``, the factor will be invalid if the factor expression is already present in other experiments within the same ``exp_subfolder``.
+
+    :Example:
+
+    .. code-block:: python
+    
+        global_cfg = {
+            'freq': 'inday',
+            'num_threads': 16,
+            'blacklist': True,
+        }
+
+.. _load_data_cfg:
+
+.. py:data:: load_data_cfg
+
+    加载数据配置(local ver), 与 :ref:`sfutil_load_data_cfg<sfutil_load_data_cfg>` 仅能存在一种
+
+    :Parameters:
+
+    train_start : int
+        The start date of the training data, in the format of ``YYYYMMDD``
+    
+    train_end : int
+        The end date of the training data, in the format of ``YYYYMMDD``
+    
+    x : list
+        The list of factor file names
+    
+    x_path : str
+        The path of the factor data
+    
+    y : str
+        The label file name
+    
+    y_path : str
+        The path of the label data
+    
+    y_label : list
+        The list of label names
+    
+    mask : bool
+        Whether to use the mask data. The default is ``False``.
+    
+    univ : str
+        The universe file name. The default is ``None``.
+
+    :Example:
+
+    .. code-block:: python
+
+        load_data_cfg = {
+            'train_start': 20230509,
+            'train_end': 20230510,
+            'x': ['factor_v1'],
+            'x_path': '~/mnt/proj_3s',
+            'y': 'label_v1',
+            'y_path': '~/mnt/proj_3s',
+            'y_label': ['y.1m', 'y.5m', 'y.10m'],
+            'mask': False,
+            'univ': None,
+        }
+
+    .. warning::
+        The ``mask`` ``univ`` parameter is not supported in the current version. They need more work to be implemented robustly.
+
+    .. note::
+        ``x`` files need to be in the same folders. 
+        
+        All data need to be arrow format.
+
+        All data need to be single file. E.g. ``factor_v1``.
+
+.. _sfutil_load_data_cfg:
+
+.. py:data:: sfutil_load_data_cfg
+
+    加载数据配置(sfutils ver), 与 :ref:`load_data_cfg<load_data_cfg>` 仅能存在一种
+
+    :Parameters:
+
+    train_start : str
+        The start date of the training data, in the format of ``YYYYMMDD``
+
+    train_end : str
+        The end date of the training data, in the format of ``YYYYMMDD``
+
+    user : str **Optional**
+        The data owner name, if not provided, the default is current env user name
+
+    x : list
+        The list of factor file names
+    
+    y : str
+        The label file name
+    
+    y_label : list
+        The list of label names
+
+
+    :Example:
+
+    .. code-block:: python
+    
+        sfutil_load_data_cfg = {
+            'train_start': '20220701',
+            'train_end': '20220705',
+            'user': 'xxx',
+            'x': ['eval3s_v01_norm'],
+            'y': 'eval3s_v01_norm',
+            'y_label': ['y.1m', 'y.5m', 'y.10m'],
+        }
+
+.. _pop_cfg:
+
+.. py:data:: pop_cfg
+
+    初始种群设置
+
+    :Parameters:
+
+    n : int
+        The number of individuals in the initial population
+
+
+    :Example:
+
+    .. code-block:: python
+    
+        pop_cfg = {
+            'n': 30,
+        }
+
+.. py:data:: algo_cfg
+
+    主算法设置
+
+    :Parameters:
+
+    mu : int
+        The number of individuals to select for the next generation
+    
+    lambda\_ : int
+        The number of children to produce at each generation
+    
+    cxpb : float
+        The probability of mating two individuals
+
+    mutpb : float
+        The probability of mutating an individual
+
+    ngen : int
+        The number of generations to run
+
+    limits_prop: float
+        The proportion of the limits of the valid index value of the factor
+
+    tolerance: float
+        The tolerance of the invalid index value of the factor can be accepted
+
+    :Example:
+
+    .. code-block:: python
+
+        algo_cfg = {
+            'mu': 10,
+            'lambda_': 20,
+            'cxpb': 0.7,
+            'mutpb': 0.3,
+            'ngen': 2,
+            'limits_prop': 0.08,
+            'tolerance': 0.3,
+        }
+
+    .. note::
+        for ``mu`` and ``lambda_``, sum of them should be equal to ``n`` in :ref:`pop_cfg<pop_cfg>`
+
+        more info about eval index value about ``limits_prop`` and ``tolerance`` , see :ref:`eval_cfg<eval_cfg>`
+
+
+.. _eval_cfg:
+
+.. py:data:: eval_cfg
+
+    评价指标设置
+
+    :Support Method:
+    
+    ``IC``  
+    
+    *Calculate the IC&IR of the factor*
+    
+    **Parameters**
+        top : int
+            The number of top num to calculate the IC, when set ``None``, it will not calculate
+        bottom : int
+            The number of bottom num to calculate the IC, when set ``None``, it will not calculate
+
+
+    ``FR``
+
+    *Calculate the FR&IR of the factor*
+
+    **Parameters**
+        top : int
+            The number of top num to calculate the FR, when set ``None``, it will not calculate
+        bottom : int
+            The number of bottom num to calculate the FR, when set ``None``, it will not calculate
+
+    ``IC_tradable``
+
+    *Calculate the IC&IR of the factor with tradable point inday*
+
+    **Parameters**
+        top : int
+            The number of top num to calculate the IC, when set ``None``, it will not calculate
+        bottom : int
+            The number of bottom num to calculate the IC, when set ``None``, it will not calculate
+
+
+    :default parameters:
+
+    weight : list
+        The weight of the index, num depend on the output of the eval method
+    
+    limit : dict
+        The limit of the valid index value of the factor
+
+    :Example:
+
+    .. code-block:: python
+
+        eval_cfg = {
+            'IC': {
+                'top': None,
+                'bottom': None,
+                'weight': [1.0, 1.0],
+                'limit': {
+                    'y.5m_ic': 0.02,
+                    'y.5m_icir': 5,
+                }
+            },
+            'FR': {
+                'top': None,
+                'bottom': None,
+                'weight': [1.0, 1.0],
+                'limit': {
+                    'y.5m_fr': 0.5,
+                }
+            },
+            'IC_tradable': {
+                'top': None,
+                'bottom': None,
+                'weight': [1.0, 1.0],
+                'limit': {
+                    'y.30m_ic_trade': 0.02,
+                    'y.30m_icir_trade': 5,
+                }
+            },
+        }
+
+    .. note::
+        limit key should be exactly same as eval function output
+
+        all valid eval function based on ``pytorch``
+
+        现在这块写的比较烂的地方
+          * 需要手动修改eval文件来支持是否存在long short输出
+          * 后续编写如何写eval脚本

@@ -1,0 +1,14 @@
+Run
+===
+包含两种运行方式，local&slurm，首先需完成 :ref:`Config` 设置
+
+local适合在本地机器上运行&debug， slurm适合实际工作
+
+.. toctree::
+    :maxdepth: 1
+
+    local
+    slurm
+
+.. warning::
+    该部分demo暂无法直接运行，如需直接测试需修改部分cfg中路径

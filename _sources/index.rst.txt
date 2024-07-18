@@ -1,0 +1,17 @@
+.. gen_my documentation master file, created by
+   sphinx-quickstart on Tue Jul 16 15:56:17 2024.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+gen_my
+==================================
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+
+   main/user_guide/user_guide
+   main/ops/operators
+   main/TODO
+
+该文档目前包含使用指南和算子介绍两部分，后续会添加更多内容。

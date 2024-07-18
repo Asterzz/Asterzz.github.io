@@ -1,0 +1,15 @@
+Local
+================
+
+
+local运行方式较为简单，运行文件目录为 ``gen_my/src_batch/gen/run/default/run.py``
+
+仅需修改cfg_path为对应的路径即可
+
+.. code-block:: python
+
+    parser.add_argument('--cfg_path', type=str, default='path/to/cfg.py')
+
+.. code-block:: sh
+
+    python gen_my/src_batch/gen/run/default/run.py --cfg_path path/to/cfg.py

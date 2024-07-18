@@ -1,0 +1,96 @@
+Slurm
+================
+demo运行文件目录为 ``gen_my/src_batch/gen/run/slurm/demo/run.py``
+
+对应cfg为 ``gen_my/src_batch/gen/config/slurm/demo.py``
+
+slurm目的为对一类任务执行多次，因此需要自动调整config内参数，该功能使用方法如下：
+
+* 在config.py内定义需要调整的参数，将需要调整的参数用 ``{}`` 包裹，如 ``{EXP_NAME}``
+
+    .. code-block:: python
+
+        exp_cfg = {
+            'exp_folder': '/home/xule/mnt/gen_test',
+            'exp_subfolder': '{EXP_FLODER}',
+            'exp_name': '{EXP_NAME}',
+        }
+
+* 在run.py内定义对应的参数组合，如 ``EXP_NAME``  ``EXP_FLODER``
+
+    .. code-block:: python
+
+        args.add_argument('--cfg_path', type=str, default='./gen_my/src_batch/gen/config/slurm/demo.py')
+        args.add_argument('--exp_name', nargs='+', default=[f'demo_test_{i}' for i in range(0, 10)])
+        args.add_argument('--exp_floder', type=str, default='v2.1')
+
+        args = args.parse_args()
+        
+        ori_config_path = args.cfg_path
+        
+        replace_key = ['EXP_NAME', 'EXP_FLODER']
+        replace_value = [args.exp_name, [args.exp_floder]* len(args.exp_name)]
+
+        replace_list = [{key: value[i] for key, value in zip(replace_key, replace_value)} for i in range(len(replace_value[0]))]
+
+* 注意修改command部分以满足进程所需
+  
+    .. code-block:: python
+
+        command = f"mybatch -c 16 -m 200G -t 120:00:00 -g 1 -p gpu_normal -x 13,71 -s \"{run_path} {cmd_args}\""
+
+* 注意修改 ``run_path`` 若找不到路径，可以使用绝对路径
+
+    .. code-block:: python
+
+            run_path = './gen_my/src_batch/gen/run/slurm/sub_process.py'
+
+
+* 完整sample脚本如下
+
+    .. code-block:: python
+
+        import sys
+        import os
+        import subprocess
+        import argparse
+
+        sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..')))
+        from tools.utils.utils_config import load_config, create_replace_config_file
+
+        # setting
+        if __name__ == '__main__':
+            args = argparse.ArgumentParser()
+            args.add_argument('--cfg_path', type=str, default='/home/xule/mnt/gen_my/src_batch/gen/config/slurm/demo.py')
+            args.add_argument('--exp_name', nargs='+', default=[f'demo_test_{i}' for i in range(0, 10)])
+            args.add_argument('--exp_floder', type=str, default='v2.1')
+            
+            
+
+            args = args.parse_args()
+            
+            ori_config_path = args.cfg_path
+            
+            replace_key = ['EXP_NAME', 'EXP_FLODER']
+            replace_value = [args.exp_name, [args.exp_floder]* len(args.exp_name)]
+
+            replace_list = [{key: value[i] for key, value in zip(replace_key, replace_value)} for i in range(len(replace_value[0]))]
+
+            run_path = './mnt/gen_my/src_batch/gen/run/slurm/sub_process.py'
+
+            # create replace config file
+            output_config_list = create_replace_config_file(ori_config_path, replace_list)
+
+            # exec
+            for output_config in output_config_list:
+                # change dir
+                cfg = load_config(output_config)
+                exp_path = cfg['exp_cfg']
+                exp_path = os.path.join(*exp_path.values())
+                os.makedirs(exp_path, exist_ok=True)
+                os.chdir(exp_path)
+                
+                cmd_args = f"--cfg_path {output_config}"
+                command = f"mybatch -c 16 -m 200G -t 120:00:00 -g 1 -p gpu_normal -x 13,71 -s \"{run_path} {cmd_args}\""
+                process = subprocess.Popen(command, shell=True)
+                process.wait()

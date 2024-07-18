@@ -1,0 +1,7 @@
+Cross-Sectional Operators
+================================
+
+.. automodule:: arithmetic_ops
+    :members:
+    :undoc-members:
+    :show-inheritance:

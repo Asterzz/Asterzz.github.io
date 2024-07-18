@@ -1,0 +1,7 @@
+Cross-Sectional
+================================
+
+.. automodule:: ops_cross
+    :members:
+    :undoc-members:
+    :show-inheritance:

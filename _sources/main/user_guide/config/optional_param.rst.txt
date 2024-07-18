@@ -1,0 +1,51 @@
+Optional Parameters
+=====================
+
+.. py:data:: prep_cfg
+    
+    数据预处理
+
+    :Support Method:
+
+    filter_event
+    
+    *filter event in horizon*
+
+    **Parameters**
+        start_event : str
+            event start 
+        end_event : str
+            event end
+
+    :example:
+
+    .. code-block:: python
+
+        prep_cfg = {
+            "filter_event": {
+                "start_event": "start",
+                "end_event": "end"
+            }
+        }
+
+.. py:data:: comp_cfg
+
+    算子设置
+
+    :Parameters:
+
+    ops_set : list {'arith_ops', 'trans_ops', 'cross_ops', 'ts_ops'}
+        The set of operators to be used
+
+    exclude_ops : list
+        The operators to be excluded
+
+    :example:
+
+    .. code-block:: python
+
+        comp_cfg = {
+            'ops_set': ['arith_ops', 'trans_ops', 'cross_ops', 'ts_ops'],
+            'exclude_ops': ['ts_median', 'ts_percentage']
+        }
+

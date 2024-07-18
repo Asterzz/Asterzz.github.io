@@ -1,0 +1,21 @@
+TODO LIST
+====================
+
+
+INFRA DEV
+--------------------
+- Add a way to choose the main algo of gen, now it's always ``eaMuPlusLambdaMulti``
+
+OPS DEV
+---------
+- add nan mode with all ops
+- try easy way to calc diff shape
+- trans ops from sdev to cython
+- eval pytorch ver if it's faster
+- add example for each ops
+- add boolean ops and ternary ops
+- 
+
+DOC
+--------------------
+- 

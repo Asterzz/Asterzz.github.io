@@ -1,0 +1,1637 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ops_ts &#8212; gen_my 0.2.1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=362ab14a" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=0178e9a8" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=37f418d5"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/ops_ts';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">gen_my 0.2.1 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../main/user_guide/user_guide.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../main/ops/operators.html">
+    Operators
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../main/TODO.html">
+    TODO LIST
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../main/user_guide/user_guide.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../main/ops/operators.html">
+    Operators
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../main/TODO.html">
+    TODO LIST
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">ops_ts</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for ops_ts</h1><div class="highlight"><pre>
+<span></span><span class="c1"># import cython part</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;src_batch&#39;</span><span class="p">,</span> <span class="s1">&#39;gen&#39;</span><span class="p">,</span> <span class="s1">&#39;fake_sdev&#39;</span><span class="p">))</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">ts_ops</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">ts_ops</span>
+<span class="kn">from</span> <span class="nn">ts_ops</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># import sdev part</span>
+<span class="kn">import</span> <span class="nn">sdev</span>
+
+<div class="viewcode-block" id="stddev">
+<a class="viewcode-back" href="../main/ops/def/ts.html#ops_ts.stddev">[docs]</a>
+<span class="k">def</span> <span class="nf">stddev</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the time series stddev of ndarray data(index-time;cols-symbols)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        </span>
+<span class="sd">    window : int or float</span>
+<span class="sd">        will take int(abs(window)) as window size if abs(window)&lt;3 take 3</span>
+<span class="sd">        </span>
+<span class="sd">    dd : default 0</span>
+<span class="sd">        ddof of stddev calculation</span>
+<span class="sd">        </span>
+<span class="sd">    axis : default 1</span>
+<span class="sd">        axis of calculation, 1 for row, 0 for cols</span>
+<span class="sd">        </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    stddev</span>
+<span class="sd">        An numpy ndarray of the same shape,the time series stddev of input</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">stddev</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ts_min">
+<a class="viewcode-back" href="../main/ops/def/ts.html#ops_ts.ts_min">[docs]</a>
+<span class="k">def</span> <span class="nf">ts_min</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the time series min of ndarray data(index-time;cols-symbols)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        </span>
+<span class="sd">    window : int or float</span>
+<span class="sd">        will take int(abs(window)) as window size if abs(window)&lt;1 take 1</span>
+<span class="sd">        </span>
+<span class="sd">    axis : default 1</span>
+<span class="sd">        axis of calculation, 1 for row, 0 for cols</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ts_min</span>
+<span class="sd">        An numpy ndarray of the same shape, the time series simple min of input</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">ts_min</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ts_max">
+<a class="viewcode-back" href="../main/ops/def/ts.html#ops_ts.ts_max">[docs]</a>
+<span class="k">def</span> <span class="nf">ts_max</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the time series max of ndarray data(index-time;cols-symbols)</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">    </span>
+<span class="sd">    window : int or float</span>
+<span class="sd">        will take int(abs(window)) as window size if abs(window)&lt;1 take 1</span>
+<span class="sd">        </span>
+<span class="sd">    axis : default 1</span>
+<span class="sd">        axis of calculation, 1 for row, 0 for cols</span>
+<span class="sd">        </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ts_max</span>
+<span class="sd">        An numpy ndarray of the same shape, the time series simple max of input</span>
+
+<span class="sd">    &quot;&quot;&quot;</span></div>
+
+    
+    
+<div class="viewcode-block" id="ema">
+<a class="viewcode-back" href="../main/ops/def/ts.html#ops_ts.ema">[docs]</a>
+<span class="k">def</span> <span class="nf">ema</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the exponential weighted mean of ndarray data(index-time;cols-symbols)&quot;</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        </span>
+<span class="sd">    d : float</span>
+<span class="sd">        exponential prameter</span>
+<span class="sd">        </span>
+<span class="sd">    axis : default 0</span>
+<span class="sd">        axis of calculation, 0 for row, 1 for cols</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ema    </span>
+<span class="sd">        An numpy ndarray of the same shape, the exponential weighted mean  of input</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">        This ops axis is opposite to the normal numpy axis definition</span>
+<span class="sd">        </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">ema</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="delta">
+<a class="viewcode-back" href="../main/ops/def/ts.html#ops_ts.delta">[docs]</a>
+<span class="k">def</span> <span class="nf">delta</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the time series delta of ndarray data(index-time;cols-symbols)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+
+<span class="sd">    window : int or float</span>
+<span class="sd">        will take int(abs(window)) as window size</span>
+<span class="sd">        </span>
+<span class="sd">    axis : default 0</span>
+<span class="sd">        axis of calculation, 1 for row, 0 for cols</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    delta    </span>
+<span class="sd">        An numpy ndarray of the same shape,the time series delta of input</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">delta</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="decay_linear">
+<a class="viewcode-back" href="../main/ops/def/ts.html#ops_ts.decay_linear">[docs]</a>
+<span class="k">def</span> <span class="nf">decay_linear</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the linear decayed mean of ndarray data(index-time;cols-symbols);eg (1*X1+2*X2+3*X3+4*X4+.....+n*Xn)/(1+2+3+4+...+n)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        </span>
+<span class="sd">    window : int or float</span>
+<span class="sd">        will take int(abs(window)) as window size if abs(window)&lt;2 take 2</span>
+<span class="sd">        </span>
+<span class="sd">    axis : default 0</span>
+<span class="sd">        axis of calculation, 1 for row, 0 for cols</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    decay_linear    </span>
+<span class="sd">        An numpy ndarray of the same shape, the linear decayed mean of input</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">decay_linear</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ts_median">
+<a class="viewcode-back" href="../main/ops/def/ts.html#ops_ts.ts_median">[docs]</a>
+<span class="k">def</span> <span class="nf">ts_median</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the time series median of ndarray data(index-time;cols-symbols)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        </span>
+<span class="sd">    window : int or float</span>
+<span class="sd">        will take int(abs(window)) as window size if abs(window)&lt;1 take 1</span>
+<span class="sd">        </span>
+<span class="sd">    axis : default 1</span>
+<span class="sd">        axis of calculation, 1 for row, 0 for cols</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ts_median    </span>
+<span class="sd">        An numpy ndarray of the same shape, the time series simple median of input</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">ts_median</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ts_mean">
+<a class="viewcode-back" href="../main/ops/def/ts.html#ops_ts.ts_mean">[docs]</a>
+<span class="k">def</span> <span class="nf">ts_mean</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the time series mean of ndarray data(index-time;cols-symbols)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        </span>
+<span class="sd">    window : int or float</span>
+<span class="sd">        will take int(abs(window)) as window size if abs(window)&lt;1 take 1</span>
+<span class="sd">        </span>
+<span class="sd">    axis : default 1</span>
+<span class="sd">        axis of calculation, 1 for row, 0 for cols</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ts_mean    </span>
+<span class="sd">        An numpy ndarray of the same shape, the time series simple mean of input</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">ts_mean</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ts_skewness">
+<a class="viewcode-back" href="../main/ops/def/ts.html#ops_ts.ts_skewness">[docs]</a>
+<span class="k">def</span> <span class="nf">ts_skewness</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the time series simple skewness of ndarray data(index-symbols;cols-time)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        </span>
+<span class="sd">    window : int or float</span>
+<span class="sd">        will take int(abs(window)) as window size if abs(window)&lt;3 take 3</span>
+<span class="sd">        </span>
+<span class="sd">    axis : default 1</span>
+<span class="sd">        axis of calculation, 1 for row, 0 for cols</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ts_skewness    </span>
+<span class="sd">        An numpy ndarray of the same shape, the time series simple skewness of input</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">ts_skewness</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="delay">
+<a class="viewcode-back" href="../main/ops/def/ts.html#ops_ts.delay">[docs]</a>
+<span class="k">def</span> <span class="nf">delay</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the  delayed result of ndarray data(index-time;cols-symbols)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        </span>
+<span class="sd">    window : int or float</span>
+<span class="sd">        will take int(abs(window)) as window size</span>
+<span class="sd">        </span>
+<span class="sd">    axis : default 1</span>
+<span class="sd">        axis of calculation, 1 for row, 0 for cols</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    delay    </span>
+<span class="sd">        An numpy ndarray of the same shape,the delayed result of input; the top int(d) rows are all nan</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">delay</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ts_max_diff">
+<a class="viewcode-back" href="../main/ops/def/ts.html#ops_ts.ts_max_diff">[docs]</a>
+<span class="k">def</span> <span class="nf">ts_max_diff</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , Returns x - tsmax(x, window) of ndarray data(index-symbols;cols-time)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        </span>
+<span class="sd">    window : int or float</span>
+<span class="sd">        will take int(abs(window)) as window size if abs(window)&lt;1 take 1</span>
+<span class="sd">        </span>
+<span class="sd">    axis : default 1</span>
+<span class="sd">        axis of calculation, 1 for row, 0 for cols</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ts_max_diff    </span>
+<span class="sd">        An numpy ndarray of the same shape, x - tsmax(x, window) of input</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">ts_max_diff</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ts_min_diff">
+<a class="viewcode-back" href="../main/ops/def/ts.html#ops_ts.ts_min_diff">[docs]</a>
+<span class="k">def</span> <span class="nf">ts_min_diff</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , Returns x - tsmin(x, window) of ndarray data(index-symbols;cols-time)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        </span>
+<span class="sd">    window : int or float</span>
+<span class="sd">        will take int(abs(window)) as window size if abs(window)&lt;1 take 1</span>
+<span class="sd">        </span>
+<span class="sd">    axis : default 1</span>
+<span class="sd">        axis of calculation, 1 for row, 0 for cols</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ts_min_diff    </span>
+<span class="sd">        An numpy ndarray of the same shape, x - tsmin(x, window) of input</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">ts_min_diff</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ts_rank">
+<a class="viewcode-back" href="../main/ops/def/ts.html#ops_ts.ts_rank">[docs]</a>
+<span class="k">def</span> <span class="nf">ts_rank</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the time series pct rank(ascending) of ndarray data(index-time;cols-symbols)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        </span>
+<span class="sd">    window : int or float</span>
+<span class="sd">        will take math.ceil(window) as window size</span>
+<span class="sd">        </span>
+<span class="sd">    axis : default 1</span>
+<span class="sd">        axis of calculation, 1 for row, 0 for cols</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ts_rank    </span>
+<span class="sd">        An numpy ndarray of the same shape,the time series pct rank(ascending) of input</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">ts_rank</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="var">
+<a class="viewcode-back" href="../main/ops/def/ts.html#ops_ts.var">[docs]</a>
+<span class="k">def</span> <span class="nf">var</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the time series var of ndarray data</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        </span>
+<span class="sd">    window : int or float</span>
+<span class="sd">        will take int(abs(window)) as window size if abs(window)&lt;1 take 1</span>
+<span class="sd">        </span>
+<span class="sd">    axis : default 1</span>
+<span class="sd">        axis of calculation, 1 for row, 0 for cols</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    var    </span>
+<span class="sd">        An numpy ndarray of the same shape, the time series var of input</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ts_kurtosis">
+<a class="viewcode-back" href="../main/ops/def/ts.html#ops_ts.ts_kurtosis">[docs]</a>
+<span class="k">def</span> <span class="nf">ts_kurtosis</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the time series simple kurtosis of ndarray data</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        </span>
+<span class="sd">    window : int or float</span>
+<span class="sd">        will take int(abs(window)) as window size if abs(window)&lt;1 take 1</span>
+<span class="sd">        </span>
+<span class="sd">    axis : default 1</span>
+<span class="sd">        axis of calculation, 1 for row, 0 for cols</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ts_kurtosis    </span>
+<span class="sd">        An numpy ndarray of the same shape, the time series simple kurtosis of input</span>
+
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">ts_kurtosis</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ts_scale">
+<a class="viewcode-back" href="../main/ops/def/ts.html#ops_ts.ts_scale">[docs]</a>
+<span class="k">def</span> <span class="nf">ts_scale</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , (x - tsmin(x，n)) / (tsmax(x，n) - tsmin(x，n)) + CONSTANT</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        </span>
+<span class="sd">    window : int or float</span>
+<span class="sd">        will take int(abs(window)) as window size if abs(window)&lt;2 take 2</span>
+<span class="sd">    </span>
+<span class="sd">    c: float or int</span>
+<span class="sd">        CONSTANT</span>
+<span class="sd">        </span>
+<span class="sd">    axis : default 1</span>
+<span class="sd">        axis of calculation, 1 for row, 0 for cols</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ts_scale    </span>
+<span class="sd">        An numpy ndarray of the same shape, the time series scale of input</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">ts_scale</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ts_percentage">
+<a class="viewcode-back" href="../main/ops/def/ts.html#ops_ts.ts_percentage">[docs]</a>
+<span class="k">def</span> <span class="nf">ts_percentage</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">percent</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return percentile value of x for the past n days</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        </span>
+<span class="sd">    window : int or float</span>
+<span class="sd">        will take int(abs(window)) as window size if abs(window)&lt;1 take 1</span>
+<span class="sd">        </span>
+<span class="sd">    percent : float</span>
+<span class="sd">        percentile value (0, 100)</span>
+<span class="sd">        </span>
+<span class="sd">    axis : default 1</span>
+<span class="sd">        axis of calculation, 1 for row, 0 for cols</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ts_percentage    </span>
+<span class="sd">        An numpy ndarray of the same shape, the time series percentage of input</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">ts_percentage</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">percent</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ts_ir">
+<a class="viewcode-back" href="../main/ops/def/ts.html#ops_ts.ts_ir">[docs]</a>
+<span class="k">def</span> <span class="nf">ts_ir</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return (the time series simple mean / the time series simple standard deviation) of ndarray data(index-symbols;cols-time)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        </span>
+<span class="sd">    window : int or float</span>
+<span class="sd">        will take int(abs(window)) as window size if abs(window)&lt;1 take 1</span>
+<span class="sd">        </span>
+<span class="sd">    axis : default 1</span>
+<span class="sd">        axis of calculation, 1 for row, 0 for cols</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ts_ir    </span>
+<span class="sd">        An numpy ndarray of the same shape, (tsmean / tsstddev) of input</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">ts_ir</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ts_max_kurt">
+<a class="viewcode-back" href="../main/ops/def/ts.html#ops_ts.ts_max_kurt">[docs]</a>
+<span class="k">def</span> <span class="nf">ts_max_kurt</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the kurtosis of the top k largest value in the time window of ndarray data(index-symbols;cols-time)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        </span>
+<span class="sd">    window : int or float</span>
+<span class="sd">        will take int(abs(window)) as window size if abs(window)&lt;1 take 1</span>
+<span class="sd">    </span>
+<span class="sd">    k : int</span>
+<span class="sd">        top k in the time window; if abs(k)&lt;1 will take 1</span>
+
+<span class="sd">    axis : default 1</span>
+<span class="sd">        axis of calculation, 1 for row, 0 for cols</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ts_max_kurt    </span>
+<span class="sd">        An numpy ndarray of the same shape, the time series max kurtosis of input</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">ts_max_kurt</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ts_max_skew">
+<a class="viewcode-back" href="../main/ops/def/ts.html#ops_ts.ts_max_skew">[docs]</a>
+<span class="k">def</span> <span class="nf">ts_max_skew</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the skewness of the top k largest value in the time window of ndarray data(index-symbols;cols-time)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        </span>
+<span class="sd">    window : int or float</span>
+<span class="sd">        will take int(abs(window)) as window size if abs(window)&lt;1 take 1</span>
+<span class="sd">    </span>
+<span class="sd">    k : int</span>
+<span class="sd">        top k in the time window; if abs(k)&lt;1 will take 1</span>
+
+<span class="sd">    axis : default 1</span>
+<span class="sd">        axis of calculation, 1 for row, 0 for cols</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ts_max_skew    </span>
+<span class="sd">        An numpy ndarray of the same shape, the time series the skewness of the top k largest value of input</span>
+
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">ts_max_skew</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ts_max_mean">
+<a class="viewcode-back" href="../main/ops/def/ts.html#ops_ts.ts_max_mean">[docs]</a>
+<span class="k">def</span> <span class="nf">ts_max_mean</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the mean of the top k largest value in the time window of ndarray data(index-symbols;cols-time)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        </span>
+<span class="sd">    window : int or float</span>
+<span class="sd">        will take int(abs(window)) as window size if abs(window)&lt;1 take 1</span>
+<span class="sd">    </span>
+<span class="sd">    k : int</span>
+<span class="sd">        top k in the time window; if abs(k)&lt;1 will take 1</span>
+
+<span class="sd">    axis : default 1</span>
+<span class="sd">        axis of calculation, 1 for row, 0 for cols</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ts_max_mean    </span>
+<span class="sd">        An numpy ndarray of the same shape, the time series the mean of the top k largest value of input</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">ts_max_mean</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ts_max_std">
+<a class="viewcode-back" href="../main/ops/def/ts.html#ops_ts.ts_max_std">[docs]</a>
+<span class="k">def</span> <span class="nf">ts_max_std</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the standard deviation of the top k largest value in the time window of ndarray data(index-symbols;cols-time)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        </span>
+<span class="sd">    window : int or float</span>
+<span class="sd">        will take int(abs(window)) as window size if abs(window)&lt;1 take 1</span>
+<span class="sd">    </span>
+<span class="sd">    k : int</span>
+<span class="sd">        top k in the time window; if abs(k)&lt;1 will take 1</span>
+
+<span class="sd">    axis : default 1</span>
+<span class="sd">        axis of calculation, 1 for row, 0 for cols</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ts_max_std    </span>
+<span class="sd">        An numpy ndarray of the same shape, the time series the standard deviation of the top k largest value of input</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">ts_max_std</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ts_min_sum">
+<a class="viewcode-back" href="../main/ops/def/ts.html#ops_ts.ts_min_sum">[docs]</a>
+<span class="k">def</span> <span class="nf">ts_min_sum</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the sum of the top k smallest value in the time window of ndarray data(index-symbols;cols-time)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        </span>
+<span class="sd">    window : int or float</span>
+<span class="sd">        will take int(abs(window)) as window size if abs(window)&lt;1 take 1</span>
+<span class="sd">    </span>
+<span class="sd">    k : int</span>
+<span class="sd">        top k in the time window; if abs(k)&lt;1 will take 1</span>
+
+<span class="sd">    axis : default 1</span>
+<span class="sd">        axis of calculation, 1 for row, 0 for cols</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ts_min_sum    </span>
+<span class="sd">        An numpy ndarray of the same shape, the time series the sum of the top k smallest value of input</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">ts_min_sum</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ts_min_std">
+<a class="viewcode-back" href="../main/ops/def/ts.html#ops_ts.ts_min_std">[docs]</a>
+<span class="k">def</span> <span class="nf">ts_min_std</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the standard deviation of the top k smallest value in the time window of ndarray data(index-symbols;cols-time)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        </span>
+<span class="sd">    window : int or float</span>
+<span class="sd">        will take int(abs(window)) as window size if abs(window)&lt;1 take 1</span>
+<span class="sd">    </span>
+<span class="sd">    k : int</span>
+<span class="sd">        top k in the time window; if abs(k)&lt;1 will take 1</span>
+
+<span class="sd">    axis : default 1</span>
+<span class="sd">        axis of calculation, 1 for row, 0 for cols</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ts_min_std    </span>
+<span class="sd">        An numpy ndarray of the same shape, the time series the standard deviation of the top k smallest value of input</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">ts_min_std</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ts_min_kurt">
+<a class="viewcode-back" href="../main/ops/def/ts.html#ops_ts.ts_min_kurt">[docs]</a>
+<span class="k">def</span> <span class="nf">ts_min_kurt</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the kurtosis of the top k smallest value in the time window of ndarray data(index-symbols;cols-time)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        </span>
+<span class="sd">    window : int or float</span>
+<span class="sd">        will take int(abs(window)) as window size if abs(window)&lt;1 take 1</span>
+<span class="sd">    </span>
+<span class="sd">    k : int</span>
+<span class="sd">        top k in the time window; if abs(k)&lt;1 will take 1</span>
+
+<span class="sd">    axis : default 1</span>
+<span class="sd">        axis of calculation, 1 for row, 0 for cols</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ts_min_kurt    </span>
+<span class="sd">        An numpy ndarray of the same shape, the time series the kurtosis of the top k smallest value of input</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">ts_min_kurt</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ts_min_mean">
+<a class="viewcode-back" href="../main/ops/def/ts.html#ops_ts.ts_min_mean">[docs]</a>
+<span class="k">def</span> <span class="nf">ts_min_mean</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the mean of the top k smallest value in the time window of ndarray data(index-symbols;cols-time)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        </span>
+<span class="sd">    window : int or float</span>
+<span class="sd">        will take int(abs(window)) as window size if abs(window)&lt;1 take 1</span>
+<span class="sd">    </span>
+<span class="sd">    k : int</span>
+<span class="sd">        top k in the time window; if abs(k)&lt;1 will take 1</span>
+
+<span class="sd">    axis : default 1</span>
+<span class="sd">        axis of calculation, 1 for row, 0 for cols</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ts_min_mean    </span>
+<span class="sd">        An numpy ndarray of the same shape, the time series the mean of the top k smallest value of input</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">ts_min_mean</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ts_min_skew">
+<a class="viewcode-back" href="../main/ops/def/ts.html#ops_ts.ts_min_skew">[docs]</a>
+<span class="k">def</span> <span class="nf">ts_min_skew</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the skewness of the top k smallest value in the time window of ndarray data(index-symbols;cols-time)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        </span>
+<span class="sd">    window : int or float</span>
+<span class="sd">        will take int(abs(window)) as window size if abs(window)&lt;1 take 1</span>
+<span class="sd">    </span>
+<span class="sd">    k : int</span>
+<span class="sd">        top k in the time window; if abs(k)&lt;1 will take 1</span>
+
+<span class="sd">    axis : default 1</span>
+<span class="sd">        axis of calculation, 1 for row, 0 for cols</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ts_min_skew    </span>
+<span class="sd">        An numpy ndarray of the same shape, the time series the skewness of the top k smallest value of input</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">ts_min_skew</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+
+
+
+
+<div class="viewcode-block" id="ts_min_max_cps">
+<a class="viewcode-back" href="../main/ops/def/ts.html#ops_ts.ts_min_max_cps">[docs]</a>
+<span class="k">def</span> <span class="nf">ts_min_max_cps</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return x - F * (tsmin(x, window) + tsmax(x, window)) of ndarray data(index-symbols;cols-time)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        </span>
+<span class="sd">    window : int or float</span>
+<span class="sd">        will take int(abs(window)) as window size; if abs(window)&lt;1 will take 1</span>
+<span class="sd">    </span>
+<span class="sd">    F : float</span>
+<span class="sd">        constant, default to 0.5</span>
+<span class="sd">        </span>
+<span class="sd">    axis : default 1</span>
+<span class="sd">        axis of calculation, 1 for row, 0 for cols</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ts_min_skew    </span>
+<span class="sd">        An numpy ndarray of the same shape, x - F * (tsmin(x, window) + tsmax(x, window)) of input</span>
+<span class="sd">        </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">ts_min_max_cps</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ts_returns">
+<a class="viewcode-back" href="../main/ops/def/ts.html#ops_ts.ts_returns">[docs]</a>
+<span class="k">def</span> <span class="nf">ts_returns</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">MODE</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , </span>
+<span class="sd">    MODE == 1:</span>
+<span class="sd">    return (x - tsdelay(x, n)) / tsdelay(x, n)</span>
+<span class="sd">    MODE == 2:</span>
+<span class="sd">    return (x = tsdelay(x, n)) / ((x + tsdelay(x,n)) /2)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        </span>
+<span class="sd">    window : int or float</span>
+<span class="sd">        will take int(abs(window)) as window size; if abs(window)&lt;1 will take 1</span>
+<span class="sd">    </span>
+<span class="sd">    MODE : int</span>
+<span class="sd">        default 1, 1 or 2</span>
+
+<span class="sd">    axis : default 1</span>
+<span class="sd">        axis of calculation, 1 for row, 0 for cols</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ts_returns    </span>
+<span class="sd">        An numpy ndarray of the same shape, (x - delay(x, window)) / delay(x, window) of input</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">ts_returns</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">MODE</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ts_zscore">
+<a class="viewcode-back" href="../main/ops/def/ts.html#ops_ts.ts_zscore">[docs]</a>
+<span class="k">def</span> <span class="nf">ts_zscore</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the time series simple standard score of ndarray data(index-symbols;cols-time)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        </span>
+<span class="sd">    window : int or float</span>
+<span class="sd">        will take int(abs(window)) as window size; if abs(window)&lt;1 will take 1</span>
+<span class="sd">    </span>
+<span class="sd">    axis : default 1</span>
+<span class="sd">        axis of calculation, 1 for row, 0 for cols</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ts_zscore    </span>
+<span class="sd">        An numpy ndarray of the same shape, the time series simple standard score of input</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">ts_zscore</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="sumac">
+<a class="viewcode-back" href="../main/ops/def/ts.html#ops_ts.sumac">[docs]</a>
+<span class="k">def</span> <span class="nf">sumac</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , sumac(data,window,axis=1) 累加（返回序列）</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        </span>
+<span class="sd">    window : int or float</span>
+<span class="sd">        will take int(abs(window)) as window size; if abs(window)&lt;1 will take 1</span>
+<span class="sd">    </span>
+<span class="sd">    axis : default 1</span>
+<span class="sd">        axis of calculation, 1 for row, 0 for cols</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    sumac    </span>
+<span class="sd">        An numpy ndarray of the same shape, the time series simple sum of input</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">sumac</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="low_day">
+<a class="viewcode-back" href="../main/ops/def/ts.html#ops_ts.low_day">[docs]</a>
+<span class="k">def</span> <span class="nf">low_day</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the low day of ndarray data(index-symbols;cols-time) </span>
+<span class="sd">    low day is the distance between the lowest value time and current time within the time window</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        </span>
+<span class="sd">    window : int or float</span>
+<span class="sd">        will take int(abs(window)) as window size; if abs(window)&lt;1 will take 1</span>
+<span class="sd">    </span>
+<span class="sd">    axis : default 1</span>
+<span class="sd">        axis of calculation, 1 for row, 0 for cols</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    low_day    </span>
+<span class="sd">        An numpy ndarray of the same shape, the low day of input</span>
+
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">low_day</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="low_count">
+<a class="viewcode-back" href="../main/ops/def/ts.html#ops_ts.low_count">[docs]</a>
+<span class="k">def</span> <span class="nf">low_count</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the low count of ndarray data(index-symbols;cols-time)</span>
+<span class="sd">    low count is the times of new lower value apperance along the time window</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        </span>
+<span class="sd">    window : int or float</span>
+<span class="sd">        will take int(abs(window)) as window size; if abs(window)&lt;1 will take 1</span>
+<span class="sd">    </span>
+<span class="sd">    axis : default 1</span>
+<span class="sd">        axis of calculation, 1 for row, 0 for cols</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    low_count    </span>
+<span class="sd">        An numpy ndarray of the same shape, the low count of input</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">low_count</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="highday">
+<a class="viewcode-back" href="../main/ops/def/ts.html#ops_ts.highday">[docs]</a>
+<span class="k">def</span> <span class="nf">highday</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the high day of ndarray data(index-symbols;cols-time)</span>
+<span class="sd">    high day is the distance between the highest value time and current time within the time window</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        </span>
+<span class="sd">    window : int or float</span>
+<span class="sd">        will take int(abs(window)) as window size; if abs(window)&lt;1 will take 1</span>
+<span class="sd">    </span>
+<span class="sd">    axis : default 1</span>
+<span class="sd">        axis of calculation, 1 for row, 0 for cols</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    highday    </span>
+<span class="sd">        An numpy ndarray of the same shape, the high day of input</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">highday</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="highcount">
+<a class="viewcode-back" href="../main/ops/def/ts.html#ops_ts.highcount">[docs]</a>
+<span class="k">def</span> <span class="nf">highcount</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the high count of ndarray data(index-symbols;cols-time)</span>
+<span class="sd">    high count is the times of new higher value apperance along the time window</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        </span>
+<span class="sd">    window : int or float</span>
+<span class="sd">        will take int(abs(window)) as window size; if abs(window)&lt;1 will take 1</span>
+<span class="sd">    </span>
+<span class="sd">    axis : default 1</span>
+<span class="sd">        axis of calculation, 1 for row, 0 for cols</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    highcount    </span>
+<span class="sd">        An numpy ndarray of the same shape, the high count of input</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">highcount</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ts_av_diff">
+<a class="viewcode-back" href="../main/ops/def/ts.html#ops_ts.ts_av_diff">[docs]</a>
+<span class="k">def</span> <span class="nf">ts_av_diff</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the volatility of processing time series data.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        </span>
+<span class="sd">    window : int or float</span>
+<span class="sd">        will take int(abs(window)) as window size; if abs(window)&lt;1 will take 1</span>
+<span class="sd">    </span>
+<span class="sd">    axis : default 1</span>
+<span class="sd">        axis of calculation, 1 for row, 0 for cols</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ts_av_diff    </span>
+<span class="sd">        An numpy ndarray of the same shape,the time volatility of input</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">ts_av_diff</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="correlation">
+<a class="viewcode-back" href="../main/ops/def/ts.html#ops_ts.correlation">[docs]</a>
+<span class="k">def</span> <span class="nf">correlation</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the time series correlation of ndarray data1(index-time;cols-symbols) and ndarray data2(index-time;cols-symbols); arr1 and arr2 have the same shape</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr1 : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        </span>
+<span class="sd">    arr2 : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        </span>
+<span class="sd">    window : int or float</span>
+<span class="sd">        will take int(abs(window)) as window size; if abs(window)&lt;1 will take 1</span>
+<span class="sd">    </span>
+<span class="sd">    axis : default 1</span>
+<span class="sd">        axis of calculation, 1 for row, 0 for cols</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    correlation    </span>
+<span class="sd">        An numpy ndarray of the same shape,the the time series correlation of input1 and input2</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">correlation</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="covariance">
+<a class="viewcode-back" href="../main/ops/def/ts.html#ops_ts.covariance">[docs]</a>
+<span class="k">def</span> <span class="nf">covariance</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the time series covariance of ndarray data1(index-time;cols-symbols) and ndarray data2(index-time;cols-symbols); arr1 and arr2 have the same shape</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr1 : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        </span>
+<span class="sd">    arr2 : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        </span>
+<span class="sd">    window : int or float</span>
+<span class="sd">        will take int(abs(window)) as window size; if abs(window)&lt;1 will take 1</span>
+<span class="sd">    </span>
+<span class="sd">    axis : default 1</span>
+<span class="sd">        axis of calculation, 1 for row, 0 for cols</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    covariance    </span>
+<span class="sd">        An numpy ndarray of the same shape,the the time series covariance of input1 and input2</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">covariance</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ts_regression">
+<a class="viewcode-back" href="../main/ops/def/ts.html#ops_ts.ts_regression">[docs]</a>
+<span class="k">def</span> <span class="nf">ts_regression</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">RETTYPE</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , </span>
+<span class="sd">    ts_regression(x, y, n, RETTYPE)</span>
+<span class="sd">    given linear regression y = b * x + a,</span>
+<span class="sd">    output is (based on RETTYPE):</span>
+<span class="sd">        0 = Y - EY</span>
+<span class="sd">        1 = a</span>
+<span class="sd">        2 = b</span>
+<span class="sd">        3 = Ey</span>
+<span class="sd">        4 = square</span>
+<span class="sd">        5 = adjust r square</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr1 : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        </span>
+<span class="sd">    arr2 : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        </span>
+<span class="sd">    window : int or float</span>
+<span class="sd">        will take int(abs(window)) as window size; if abs(window)&lt;1 will take 1</span>
+<span class="sd">    </span>
+<span class="sd">    RETTYPE : int</span>
+<span class="sd">        0 = Y - EY</span>
+<span class="sd">        1 = a</span>
+<span class="sd">        2 = b</span>
+<span class="sd">        3 = Ey</span>
+<span class="sd">        4 = square</span>
+<span class="sd">        5 = adjust r square</span>
+<span class="sd">        </span>
+<span class="sd">    axis : default 1</span>
+<span class="sd">        axis of calculation, 1 for row, 0 for cols</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ts_regression    </span>
+<span class="sd">        An numpy ndarray of the same shape,the the time series regression of input1 and input2</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">ts_regression</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">RETTYPE</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ts_weighted_delay">
+<a class="viewcode-back" href="../main/ops/def/ts.html#ops_ts.ts_weighted_delay">[docs]</a>
+<span class="k">def</span> <span class="nf">ts_weighted_delay</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return x * K + tsdelay(x, 1) * (1- K) of ndarray data(index-symbols;cols-time)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        </span>
+<span class="sd">    k : float</span>
+<span class="sd">        default 0.5</span>
+<span class="sd">    </span>
+<span class="sd">    axis : default 1</span>
+<span class="sd">        axis of calculation, 1 for row, 0 for cols</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ts_weighted_delay    </span>
+<span class="sd">        An numpy ndarray of the same shape,the weighted delayed result of input</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">ts_weighted_delay</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+
+
+
+
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;stddev&#39;</span><span class="p">,</span> <span class="s1">&#39;ts_min&#39;</span><span class="p">,</span> <span class="s1">&#39;ts_max&#39;</span><span class="p">,</span> <span class="s1">&#39;ema&#39;</span><span class="p">,</span> <span class="s1">&#39;delta&#39;</span><span class="p">,</span> <span class="s1">&#39;decay_linear&#39;</span><span class="p">,</span> <span class="s1">&#39;ts_median&#39;</span><span class="p">,</span> <span class="s1">&#39;ts_mean&#39;</span><span class="p">,</span> <span class="s1">&#39;ts_skewness&#39;</span><span class="p">,</span> <span class="s1">&#39;delay&#39;</span><span class="p">,</span> <span class="s1">&#39;ts_max_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;ts_min_diff&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;ts_rank&#39;</span><span class="p">,</span> <span class="s1">&#39;var&#39;</span><span class="p">,</span> <span class="s1">&#39;ts_kurtosis&#39;</span><span class="p">,</span> <span class="s1">&#39;ts_scale&#39;</span><span class="p">,</span> <span class="s1">&#39;ts_percentage&#39;</span><span class="p">,</span> <span class="s1">&#39;ts_ir&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;ts_max_kurt&#39;</span><span class="p">,</span> <span class="s1">&#39;ts_max_skew&#39;</span><span class="p">,</span> <span class="s1">&#39;ts_max_mean&#39;</span><span class="p">,</span> <span class="s1">&#39;ts_max_std&#39;</span><span class="p">,</span> <span class="s1">&#39;ts_min_sum&#39;</span><span class="p">,</span> <span class="s1">&#39;ts_min_std&#39;</span><span class="p">,</span> <span class="s1">&#39;ts_min_kurt&#39;</span><span class="p">,</span> <span class="s1">&#39;ts_min_mean&#39;</span><span class="p">,</span> <span class="s1">&#39;ts_min_skew&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;ts_min_max_cps&#39;</span><span class="p">,</span> <span class="s1">&#39;ts_returns&#39;</span><span class="p">,</span> <span class="s1">&#39;ts_zscore&#39;</span><span class="p">,</span> <span class="s1">&#39;sumac&#39;</span><span class="p">,</span> <span class="s1">&#39;low_day&#39;</span><span class="p">,</span> <span class="s1">&#39;low_count&#39;</span><span class="p">,</span> <span class="s1">&#39;highday&#39;</span><span class="p">,</span> <span class="s1">&#39;highcount&#39;</span><span class="p">,</span> <span class="s1">&#39;ts_av_diff&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;correlation&#39;</span><span class="p">,</span> <span class="s1">&#39;covariance&#39;</span><span class="p">,</span> <span class="s1">&#39;ts_regression&#39;</span><span class="p">,</span> <span class="s1">&#39;ts_weighted_delay&#39;</span>
+    
+<span class="p">]</span>
+<span class="n">__all__</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">ts_ops</span><span class="o">.</span><span class="n">__all__</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;time series:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">__all__</span><span class="si">}</span><span class="s1"> is imported&#39;</span><span class="p">)</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Xu.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

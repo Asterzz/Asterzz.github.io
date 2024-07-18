@@ -1,0 +1,15 @@
+Config
+===========
+config 为配置文件，``.py``。用于配置整体文件的参数，由多个不同配置块组成，为实验必须文件。
+
+配置块均由 ``dict`` 包裹, 例：``exp_cfg = {'exp_folder': 'path/to/save'}``。
+
+建议放置在 ``gen_my/src_batch/gen/config`` 目录下，demo也可在这里找到。其余历史遗留cfg配置并不一定适配。
+
+
+.. toctree::
+    :maxdepth: 1
+
+    essential_param
+    optional_param
+

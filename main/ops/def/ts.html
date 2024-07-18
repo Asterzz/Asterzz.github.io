@@ -1,0 +1,1482 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Time-Series &#8212; gen_my 0.2.1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=362ab14a" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=0178e9a8" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=37f418d5"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'main/ops/def/ts';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Cross-Sectional" href="cross.html" />
+    <link rel="prev" title="Trans" href="trans.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">gen_my 0.2.1 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/user_guide.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../operators.html">
+    Operators
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../TODO.html">
+    TODO LIST
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/user_guide.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../operators.html">
+    Operators
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../TODO.html">
+    TODO LIST
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="definition.html">Definition for ops</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arithmetic.html">Arithmetic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trans.html">Trans</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Time-Series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cross.html">Cross-Sectional</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../speed.html">Speed Test</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../operators.html" class="nav-link">Operators</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="definition.html" class="nav-link">Definition for ops</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Time-Series</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-ops_ts">
+<span id="time-series"></span><h1>Time-Series<a class="headerlink" href="#module-ops_ts" title="Link to this heading">#</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.correlation">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">correlation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arr2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ops_ts.html#correlation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ops_ts.correlation" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">sdev</span></code> , return the time series correlation of ndarray data1(index-time;cols-symbols) and ndarray data2(index-time;cols-symbols); arr1 and arr2 have the same shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr1</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>arr2</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>window</strong> (<em>int</em><em> or </em><em>float</em>) – will take int(abs(window)) as window size; if abs(window)&lt;1 will take 1</p></li>
+<li><p><strong>axis</strong> (<em>default 1</em>) – axis of calculation, 1 for row, 0 for cols</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An numpy ndarray of the same shape,the the time series correlation of input1 and input2</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>correlation</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.covariance">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">covariance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arr2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ops_ts.html#covariance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ops_ts.covariance" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">sdev</span></code> , return the time series covariance of ndarray data1(index-time;cols-symbols) and ndarray data2(index-time;cols-symbols); arr1 and arr2 have the same shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr1</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>arr2</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>window</strong> (<em>int</em><em> or </em><em>float</em>) – will take int(abs(window)) as window size; if abs(window)&lt;1 will take 1</p></li>
+<li><p><strong>axis</strong> (<em>default 1</em>) – axis of calculation, 1 for row, 0 for cols</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An numpy ndarray of the same shape,the the time series covariance of input1 and input2</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>covariance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.decay_linear">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">decay_linear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ops_ts.html#decay_linear"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ops_ts.decay_linear" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">sdev</span></code> , return the linear decayed mean of ndarray data(index-time;cols-symbols);eg (1*X1+2*X2+3*X3+4*X4+…..+n*Xn)/(1+2+3+4+…+n)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>window</strong> (<em>int</em><em> or </em><em>float</em>) – will take int(abs(window)) as window size if abs(window)&lt;2 take 2</p></li>
+<li><p><strong>axis</strong> (<em>default 0</em>) – axis of calculation, 1 for row, 0 for cols</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An numpy ndarray of the same shape, the linear decayed mean of input</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>decay_linear</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.delay">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">delay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ops_ts.html#delay"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ops_ts.delay" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">sdev</span></code> , return the  delayed result of ndarray data(index-time;cols-symbols)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>window</strong> (<em>int</em><em> or </em><em>float</em>) – will take int(abs(window)) as window size</p></li>
+<li><p><strong>axis</strong> (<em>default 1</em>) – axis of calculation, 1 for row, 0 for cols</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An numpy ndarray of the same shape,the delayed result of input; the top int(d) rows are all nan</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>delay</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.delta">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">delta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ops_ts.html#delta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ops_ts.delta" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">sdev</span></code> , return the time series delta of ndarray data(index-time;cols-symbols)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>window</strong> (<em>int</em><em> or </em><em>float</em>) – will take int(abs(window)) as window size</p></li>
+<li><p><strong>axis</strong> (<em>default 0</em>) – axis of calculation, 1 for row, 0 for cols</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An numpy ndarray of the same shape,the time series delta of input</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>delta</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.ema">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">ema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ops_ts.html#ema"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ops_ts.ema" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">sdev</span></code> , return the exponential weighted mean of ndarray data(index-time;cols-symbols)”</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>d</strong> (<em>float</em>) – exponential prameter</p></li>
+<li><p><strong>axis</strong> (<em>default 0</em>) – axis of calculation, 0 for row, 1 for cols</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An numpy ndarray of the same shape, the exponential weighted mean  of input</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ema</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This ops axis is opposite to the normal numpy axis definition</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.highcount">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">highcount</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ops_ts.html#highcount"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ops_ts.highcount" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">sdev</span></code> , return the high count of ndarray data(index-symbols;cols-time)
+high count is the times of new higher value apperance along the time window</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>window</strong> (<em>int</em><em> or </em><em>float</em>) – will take int(abs(window)) as window size; if abs(window)&lt;1 will take 1</p></li>
+<li><p><strong>axis</strong> (<em>default 1</em>) – axis of calculation, 1 for row, 0 for cols</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An numpy ndarray of the same shape, the high count of input</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>highcount</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.highday">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">highday</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ops_ts.html#highday"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ops_ts.highday" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">sdev</span></code> , return the high day of ndarray data(index-symbols;cols-time)
+high day is the distance between the highest value time and current time within the time window</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>window</strong> (<em>int</em><em> or </em><em>float</em>) – will take int(abs(window)) as window size; if abs(window)&lt;1 will take 1</p></li>
+<li><p><strong>axis</strong> (<em>default 1</em>) – axis of calculation, 1 for row, 0 for cols</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An numpy ndarray of the same shape, the high day of input</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>highday</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.hump_decay">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">hump_decay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relative</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ops_ts.hump_decay" title="Link to this definition">#</a></dt>
+<dd><p>This operator helps to ignore the values that changed too little corresponding to previous ones. It can be used in two modes.</p>
+<p>The default mode:</p>
+<p>if relative == False:</p>
+<p>if abs(x[t] - x[t-1])&gt; p, return x[t], else x[t-1]</p>
+<p>The relative mode:</p>
+<p>if relative == True:</p>
+<p>if abs(x[t] - x[t-1])&gt; p * abs(x[t] + x[t-1]), return x[t], else x[t-1]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<em>np.ndarray</em>) – The input array. Must be 2D.</p></li>
+<li><p><strong>p</strong> (<em>float</em>) – The threshold value.</p></li>
+<li><p><strong>relative</strong> (<em>int</em>) – The mode of the operator. 0 for default mode, 1 for relative mode.</p></li>
+<li><p><strong>axis</strong> (<em>int</em><em>, </em><em>optional</em>) – The axis along which to calculate the operator. Default is 1.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>same shape as input array.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.jump_decay">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">jump_decay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sensitivity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stddev</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ops_ts.jump_decay" title="Link to this definition">#</a></dt>
+<dd><p>jump_decay(x) = abs(x-ts_delay(x, 1)) &gt; sensitivity * ts_stddev(x,d) ? ts_delay(x,1) + ts_delta(x, 1) * force: x</p>
+<p>If stddev enabled, jump threshold will be calculated as sensitivity * stddev otherwise it is sensitivity</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<em>np.ndarray</em>) – The input array. Must be 2D.</p></li>
+<li><p><strong>sensitivity</strong> (<em>float</em>) – The threshold value.</p></li>
+<li><p><strong>force</strong> (<em>float</em>) – The force value.</p></li>
+<li><p><strong>window</strong> (<em>int</em><em>, </em><em>optional</em>) – The window size. Default is None.</p></li>
+<li><p><strong>stddev</strong> (<em>int</em><em>, </em><em>optional</em>) – The mode of the operator. 0 for default mode, 1 for relative mode.</p></li>
+<li><p><strong>axis</strong> (<em>int</em><em>, </em><em>optional</em>) – The axis along which to calculate the operator. Default is 1.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>same shape as input array.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.log_diff">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">log_diff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ops_ts.log_diff" title="Link to this definition">#</a></dt>
+<dd><p>The operator calculates the log of the data field value today and subtracts from it the log of the data field values of window days ago.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<em>np.ndarray</em>) – The input array. Must be 2D.</p></li>
+<li><p><strong>window</strong> (<em>int</em>) – The window size.</p></li>
+<li><p><strong>axis</strong> (<em>int</em><em>, </em><em>optional</em>) – The axis along which to calculate the log difference. Default is 1.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>same shape as input array.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.low_count">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">low_count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ops_ts.html#low_count"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ops_ts.low_count" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">sdev</span></code> , return the low count of ndarray data(index-symbols;cols-time)
+low count is the times of new lower value apperance along the time window</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>window</strong> (<em>int</em><em> or </em><em>float</em>) – will take int(abs(window)) as window size; if abs(window)&lt;1 will take 1</p></li>
+<li><p><strong>axis</strong> (<em>default 1</em>) – axis of calculation, 1 for row, 0 for cols</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An numpy ndarray of the same shape, the low count of input</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>low_count</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.low_day">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">low_day</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ops_ts.html#low_day"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ops_ts.low_day" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">sdev</span></code> , return the low day of ndarray data(index-symbols;cols-time)
+low day is the distance between the lowest value time and current time within the time window</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>window</strong> (<em>int</em><em> or </em><em>float</em>) – will take int(abs(window)) as window size; if abs(window)&lt;1 will take 1</p></li>
+<li><p><strong>axis</strong> (<em>default 1</em>) – axis of calculation, 1 for row, 0 for cols</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An numpy ndarray of the same shape, the low day of input</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>low_day</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.stddev">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">stddev</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ops_ts.html#stddev"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ops_ts.stddev" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">sdev</span></code> , return the time series stddev of ndarray data(index-time;cols-symbols)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>window</strong> (<em>int</em><em> or </em><em>float</em>) – will take int(abs(window)) as window size if abs(window)&lt;3 take 3</p></li>
+<li><p><strong>dd</strong> (<em>default 0</em>) – ddof of stddev calculation</p></li>
+<li><p><strong>axis</strong> (<em>default 1</em>) – axis of calculation, 1 for row, 0 for cols</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An numpy ndarray of the same shape,the time series stddev of input</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>stddev</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.sumac">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">sumac</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ops_ts.html#sumac"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ops_ts.sumac" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">sdev</span></code> , sumac(data,window,axis=1) 累加（返回序列）</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>window</strong> (<em>int</em><em> or </em><em>float</em>) – will take int(abs(window)) as window size; if abs(window)&lt;1 will take 1</p></li>
+<li><p><strong>axis</strong> (<em>default 1</em>) – axis of calculation, 1 for row, 0 for cols</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An numpy ndarray of the same shape, the time series simple sum of input</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>sumac</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.ts_av_diff">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">ts_av_diff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ops_ts.html#ts_av_diff"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ops_ts.ts_av_diff" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">sdev</span></code> , return the volatility of processing time series data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>window</strong> (<em>int</em><em> or </em><em>float</em>) – will take int(abs(window)) as window size; if abs(window)&lt;1 will take 1</p></li>
+<li><p><strong>axis</strong> (<em>default 1</em>) – axis of calculation, 1 for row, 0 for cols</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An numpy ndarray of the same shape,the time volatility of input</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ts_av_diff</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.ts_ir">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">ts_ir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ops_ts.html#ts_ir"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ops_ts.ts_ir" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">sdev</span></code> , return (the time series simple mean / the time series simple standard deviation) of ndarray data(index-symbols;cols-time)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>window</strong> (<em>int</em><em> or </em><em>float</em>) – will take int(abs(window)) as window size if abs(window)&lt;1 take 1</p></li>
+<li><p><strong>axis</strong> (<em>default 1</em>) – axis of calculation, 1 for row, 0 for cols</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An numpy ndarray of the same shape, (tsmean / tsstddev) of input</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ts_ir</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.ts_kurtosis">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">ts_kurtosis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ops_ts.html#ts_kurtosis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ops_ts.ts_kurtosis" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">sdev</span></code> , return the time series simple kurtosis of ndarray data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>window</strong> (<em>int</em><em> or </em><em>float</em>) – will take int(abs(window)) as window size if abs(window)&lt;1 take 1</p></li>
+<li><p><strong>axis</strong> (<em>default 1</em>) – axis of calculation, 1 for row, 0 for cols</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An numpy ndarray of the same shape, the time series simple kurtosis of input</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ts_kurtosis</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.ts_max">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">ts_max</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ops_ts.html#ts_max"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ops_ts.ts_max" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">sdev</span></code> , return the time series max of ndarray data(index-time;cols-symbols)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>window</strong> (<em>int</em><em> or </em><em>float</em>) – will take int(abs(window)) as window size if abs(window)&lt;1 take 1</p></li>
+<li><p><strong>axis</strong> (<em>default 1</em>) – axis of calculation, 1 for row, 0 for cols</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An numpy ndarray of the same shape, the time series simple max of input</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ts_max</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.ts_max_diff">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">ts_max_diff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ops_ts.html#ts_max_diff"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ops_ts.ts_max_diff" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">sdev</span></code> , Returns x - tsmax(x, window) of ndarray data(index-symbols;cols-time)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>window</strong> (<em>int</em><em> or </em><em>float</em>) – will take int(abs(window)) as window size if abs(window)&lt;1 take 1</p></li>
+<li><p><strong>axis</strong> (<em>default 1</em>) – axis of calculation, 1 for row, 0 for cols</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An numpy ndarray of the same shape, x - tsmax(x, window) of input</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ts_max_diff</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.ts_max_kurt">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">ts_max_kurt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ops_ts.html#ts_max_kurt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ops_ts.ts_max_kurt" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">sdev</span></code> , return the kurtosis of the top k largest value in the time window of ndarray data(index-symbols;cols-time)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>window</strong> (<em>int</em><em> or </em><em>float</em>) – will take int(abs(window)) as window size if abs(window)&lt;1 take 1</p></li>
+<li><p><strong>k</strong> (<em>int</em>) – top k in the time window; if abs(k)&lt;1 will take 1</p></li>
+<li><p><strong>axis</strong> (<em>default 1</em>) – axis of calculation, 1 for row, 0 for cols</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An numpy ndarray of the same shape, the time series max kurtosis of input</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ts_max_kurt</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.ts_max_mean">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">ts_max_mean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ops_ts.html#ts_max_mean"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ops_ts.ts_max_mean" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">sdev</span></code> , return the mean of the top k largest value in the time window of ndarray data(index-symbols;cols-time)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>window</strong> (<em>int</em><em> or </em><em>float</em>) – will take int(abs(window)) as window size if abs(window)&lt;1 take 1</p></li>
+<li><p><strong>k</strong> (<em>int</em>) – top k in the time window; if abs(k)&lt;1 will take 1</p></li>
+<li><p><strong>axis</strong> (<em>default 1</em>) – axis of calculation, 1 for row, 0 for cols</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An numpy ndarray of the same shape, the time series the mean of the top k largest value of input</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ts_max_mean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.ts_max_skew">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">ts_max_skew</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ops_ts.html#ts_max_skew"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ops_ts.ts_max_skew" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">sdev</span></code> , return the skewness of the top k largest value in the time window of ndarray data(index-symbols;cols-time)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>window</strong> (<em>int</em><em> or </em><em>float</em>) – will take int(abs(window)) as window size if abs(window)&lt;1 take 1</p></li>
+<li><p><strong>k</strong> (<em>int</em>) – top k in the time window; if abs(k)&lt;1 will take 1</p></li>
+<li><p><strong>axis</strong> (<em>default 1</em>) – axis of calculation, 1 for row, 0 for cols</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An numpy ndarray of the same shape, the time series the skewness of the top k largest value of input</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ts_max_skew</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.ts_max_std">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">ts_max_std</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ops_ts.html#ts_max_std"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ops_ts.ts_max_std" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">sdev</span></code> , return the standard deviation of the top k largest value in the time window of ndarray data(index-symbols;cols-time)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>window</strong> (<em>int</em><em> or </em><em>float</em>) – will take int(abs(window)) as window size if abs(window)&lt;1 take 1</p></li>
+<li><p><strong>k</strong> (<em>int</em>) – top k in the time window; if abs(k)&lt;1 will take 1</p></li>
+<li><p><strong>axis</strong> (<em>default 1</em>) – axis of calculation, 1 for row, 0 for cols</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An numpy ndarray of the same shape, the time series the standard deviation of the top k largest value of input</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ts_max_std</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.ts_mean">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">ts_mean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ops_ts.html#ts_mean"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ops_ts.ts_mean" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">sdev</span></code> , return the time series mean of ndarray data(index-time;cols-symbols)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>window</strong> (<em>int</em><em> or </em><em>float</em>) – will take int(abs(window)) as window size if abs(window)&lt;1 take 1</p></li>
+<li><p><strong>axis</strong> (<em>default 1</em>) – axis of calculation, 1 for row, 0 for cols</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An numpy ndarray of the same shape, the time series simple mean of input</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ts_mean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.ts_median">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">ts_median</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ops_ts.html#ts_median"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ops_ts.ts_median" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">sdev</span></code> , return the time series median of ndarray data(index-time;cols-symbols)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>window</strong> (<em>int</em><em> or </em><em>float</em>) – will take int(abs(window)) as window size if abs(window)&lt;1 take 1</p></li>
+<li><p><strong>axis</strong> (<em>default 1</em>) – axis of calculation, 1 for row, 0 for cols</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An numpy ndarray of the same shape, the time series simple median of input</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ts_median</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.ts_min">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">ts_min</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ops_ts.html#ts_min"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ops_ts.ts_min" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">sdev</span></code> , return the time series min of ndarray data(index-time;cols-symbols)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>window</strong> (<em>int</em><em> or </em><em>float</em>) – will take int(abs(window)) as window size if abs(window)&lt;1 take 1</p></li>
+<li><p><strong>axis</strong> (<em>default 1</em>) – axis of calculation, 1 for row, 0 for cols</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An numpy ndarray of the same shape, the time series simple min of input</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ts_min</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.ts_min_diff">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">ts_min_diff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ops_ts.html#ts_min_diff"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ops_ts.ts_min_diff" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">sdev</span></code> , Returns x - tsmin(x, window) of ndarray data(index-symbols;cols-time)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>window</strong> (<em>int</em><em> or </em><em>float</em>) – will take int(abs(window)) as window size if abs(window)&lt;1 take 1</p></li>
+<li><p><strong>axis</strong> (<em>default 1</em>) – axis of calculation, 1 for row, 0 for cols</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An numpy ndarray of the same shape, x - tsmin(x, window) of input</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ts_min_diff</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.ts_min_kurt">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">ts_min_kurt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ops_ts.html#ts_min_kurt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ops_ts.ts_min_kurt" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">sdev</span></code> , return the kurtosis of the top k smallest value in the time window of ndarray data(index-symbols;cols-time)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>window</strong> (<em>int</em><em> or </em><em>float</em>) – will take int(abs(window)) as window size if abs(window)&lt;1 take 1</p></li>
+<li><p><strong>k</strong> (<em>int</em>) – top k in the time window; if abs(k)&lt;1 will take 1</p></li>
+<li><p><strong>axis</strong> (<em>default 1</em>) – axis of calculation, 1 for row, 0 for cols</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An numpy ndarray of the same shape, the time series the kurtosis of the top k smallest value of input</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ts_min_kurt</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.ts_min_max_cps">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">ts_min_max_cps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">F</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ops_ts.html#ts_min_max_cps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ops_ts.ts_min_max_cps" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">sdev</span></code> , return x - F * (tsmin(x, window) + tsmax(x, window)) of ndarray data(index-symbols;cols-time)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>window</strong> (<em>int</em><em> or </em><em>float</em>) – will take int(abs(window)) as window size; if abs(window)&lt;1 will take 1</p></li>
+<li><p><strong>F</strong> (<em>float</em>) – constant, default to 0.5</p></li>
+<li><p><strong>axis</strong> (<em>default 1</em>) – axis of calculation, 1 for row, 0 for cols</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An numpy ndarray of the same shape, x - F * (tsmin(x, window) + tsmax(x, window)) of input</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ts_min_skew</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.ts_min_mean">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">ts_min_mean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ops_ts.html#ts_min_mean"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ops_ts.ts_min_mean" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">sdev</span></code> , return the mean of the top k smallest value in the time window of ndarray data(index-symbols;cols-time)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>window</strong> (<em>int</em><em> or </em><em>float</em>) – will take int(abs(window)) as window size if abs(window)&lt;1 take 1</p></li>
+<li><p><strong>k</strong> (<em>int</em>) – top k in the time window; if abs(k)&lt;1 will take 1</p></li>
+<li><p><strong>axis</strong> (<em>default 1</em>) – axis of calculation, 1 for row, 0 for cols</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An numpy ndarray of the same shape, the time series the mean of the top k smallest value of input</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ts_min_mean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.ts_min_skew">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">ts_min_skew</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ops_ts.html#ts_min_skew"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ops_ts.ts_min_skew" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">sdev</span></code> , return the skewness of the top k smallest value in the time window of ndarray data(index-symbols;cols-time)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>window</strong> (<em>int</em><em> or </em><em>float</em>) – will take int(abs(window)) as window size if abs(window)&lt;1 take 1</p></li>
+<li><p><strong>k</strong> (<em>int</em>) – top k in the time window; if abs(k)&lt;1 will take 1</p></li>
+<li><p><strong>axis</strong> (<em>default 1</em>) – axis of calculation, 1 for row, 0 for cols</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An numpy ndarray of the same shape, the time series the skewness of the top k smallest value of input</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ts_min_skew</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.ts_min_std">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">ts_min_std</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ops_ts.html#ts_min_std"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ops_ts.ts_min_std" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">sdev</span></code> , return the standard deviation of the top k smallest value in the time window of ndarray data(index-symbols;cols-time)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>window</strong> (<em>int</em><em> or </em><em>float</em>) – will take int(abs(window)) as window size if abs(window)&lt;1 take 1</p></li>
+<li><p><strong>k</strong> (<em>int</em>) – top k in the time window; if abs(k)&lt;1 will take 1</p></li>
+<li><p><strong>axis</strong> (<em>default 1</em>) – axis of calculation, 1 for row, 0 for cols</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An numpy ndarray of the same shape, the time series the standard deviation of the top k smallest value of input</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ts_min_std</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.ts_min_sum">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">ts_min_sum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ops_ts.html#ts_min_sum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ops_ts.ts_min_sum" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">sdev</span></code> , return the sum of the top k smallest value in the time window of ndarray data(index-symbols;cols-time)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>window</strong> (<em>int</em><em> or </em><em>float</em>) – will take int(abs(window)) as window size if abs(window)&lt;1 take 1</p></li>
+<li><p><strong>k</strong> (<em>int</em>) – top k in the time window; if abs(k)&lt;1 will take 1</p></li>
+<li><p><strong>axis</strong> (<em>default 1</em>) – axis of calculation, 1 for row, 0 for cols</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An numpy ndarray of the same shape, the time series the sum of the top k smallest value of input</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ts_min_sum</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.ts_percentage">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">ts_percentage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">percent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ops_ts.html#ts_percentage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ops_ts.ts_percentage" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">sdev</span></code> , return percentile value of x for the past n days</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>window</strong> (<em>int</em><em> or </em><em>float</em>) – will take int(abs(window)) as window size if abs(window)&lt;1 take 1</p></li>
+<li><p><strong>percent</strong> (<em>float</em>) – percentile value (0, 100)</p></li>
+<li><p><strong>axis</strong> (<em>default 1</em>) – axis of calculation, 1 for row, 0 for cols</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An numpy ndarray of the same shape, the time series percentage of input</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ts_percentage</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.ts_rank">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">ts_rank</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ops_ts.html#ts_rank"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ops_ts.ts_rank" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">sdev</span></code> , return the time series pct rank(ascending) of ndarray data(index-time;cols-symbols)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>window</strong> (<em>int</em><em> or </em><em>float</em>) – will take math.ceil(window) as window size</p></li>
+<li><p><strong>axis</strong> (<em>default 1</em>) – axis of calculation, 1 for row, 0 for cols</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An numpy ndarray of the same shape,the time series pct rank(ascending) of input</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ts_rank</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.ts_regression">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">ts_regression</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arr2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">RETTYPE</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ops_ts.html#ts_regression"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ops_ts.ts_regression" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">sdev</span></code> ,
+ts_regression(x, y, n, RETTYPE)
+given linear regression y = b * x + a,
+output is (based on RETTYPE):</p>
+<blockquote>
+<div><p>0 = Y - EY
+1 = a
+2 = b
+3 = Ey
+4 = square
+5 = adjust r square</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr1</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>arr2</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>window</strong> (<em>int</em><em> or </em><em>float</em>) – will take int(abs(window)) as window size; if abs(window)&lt;1 will take 1</p></li>
+<li><p><strong>RETTYPE</strong> (<em>int</em>) – 0 = Y - EY
+1 = a
+2 = b
+3 = Ey
+4 = square
+5 = adjust r square</p></li>
+<li><p><strong>axis</strong> (<em>default 1</em>) – axis of calculation, 1 for row, 0 for cols</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An numpy ndarray of the same shape,the the time series regression of input1 and input2</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ts_regression</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.ts_returns">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">ts_returns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">MODE</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ops_ts.html#ts_returns"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ops_ts.ts_returns" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">sdev</span></code> ,
+MODE == 1:
+return (x - tsdelay(x, n)) / tsdelay(x, n)
+MODE == 2:
+return (x = tsdelay(x, n)) / ((x + tsdelay(x,n)) /2)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>window</strong> (<em>int</em><em> or </em><em>float</em>) – will take int(abs(window)) as window size; if abs(window)&lt;1 will take 1</p></li>
+<li><p><strong>MODE</strong> (<em>int</em>) – default 1, 1 or 2</p></li>
+<li><p><strong>axis</strong> (<em>default 1</em>) – axis of calculation, 1 for row, 0 for cols</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An numpy ndarray of the same shape, (x - delay(x, window)) / delay(x, window) of input</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ts_returns</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.ts_scale">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">ts_scale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ops_ts.html#ts_scale"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ops_ts.ts_scale" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">sdev</span></code> , (x - tsmin(x，n)) / (tsmax(x，n) - tsmin(x，n)) + CONSTANT</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>window</strong> (<em>int</em><em> or </em><em>float</em>) – will take int(abs(window)) as window size if abs(window)&lt;2 take 2</p></li>
+<li><p><strong>c</strong> (<em>float</em><em> or </em><em>int</em>) – CONSTANT</p></li>
+<li><p><strong>axis</strong> (<em>default 1</em>) – axis of calculation, 1 for row, 0 for cols</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An numpy ndarray of the same shape, the time series scale of input</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ts_scale</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.ts_skewness">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">ts_skewness</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ops_ts.html#ts_skewness"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ops_ts.ts_skewness" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">sdev</span></code> , return the time series simple skewness of ndarray data(index-symbols;cols-time)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>window</strong> (<em>int</em><em> or </em><em>float</em>) – will take int(abs(window)) as window size if abs(window)&lt;3 take 3</p></li>
+<li><p><strong>axis</strong> (<em>default 1</em>) – axis of calculation, 1 for row, 0 for cols</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An numpy ndarray of the same shape, the time series simple skewness of input</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ts_skewness</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.ts_weighted_delay">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">ts_weighted_delay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ops_ts.html#ts_weighted_delay"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ops_ts.ts_weighted_delay" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">sdev</span></code> , return x * K + tsdelay(x, 1) * (1- K) of ndarray data(index-symbols;cols-time)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>k</strong> (<em>float</em>) – default 0.5</p></li>
+<li><p><strong>axis</strong> (<em>default 1</em>) – axis of calculation, 1 for row, 0 for cols</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An numpy ndarray of the same shape,the weighted delayed result of input</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ts_weighted_delay</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.ts_zscore">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">ts_zscore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ops_ts.html#ts_zscore"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ops_ts.ts_zscore" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">sdev</span></code> , return the time series simple standard score of ndarray data(index-symbols;cols-time)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>window</strong> (<em>int</em><em> or </em><em>float</em>) – will take int(abs(window)) as window size; if abs(window)&lt;1 will take 1</p></li>
+<li><p><strong>axis</strong> (<em>default 1</em>) – axis of calculation, 1 for row, 0 for cols</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An numpy ndarray of the same shape, the time series simple standard score of input</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ts_zscore</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ops_ts.var">
+<span class="sig-prename descclassname"><span class="pre">ops_ts.</span></span><span class="sig-name descname"><span class="pre">var</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ops_ts.html#var"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ops_ts.var" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">sdev</span></code> , return the time series var of ndarray data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<em>ndarray</em>) – index represent time cols represent symbols</p></li>
+<li><p><strong>window</strong> (<em>int</em><em> or </em><em>float</em>) – will take int(abs(window)) as window size if abs(window)&lt;1 take 1</p></li>
+<li><p><strong>axis</strong> (<em>default 1</em>) – axis of calculation, 1 for row, 0 for cols</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An numpy ndarray of the same shape, the time series var of input</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>var</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="trans.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Trans</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="cross.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Cross-Sectional</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.correlation"><code class="docutils literal notranslate"><span class="pre">correlation()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.covariance"><code class="docutils literal notranslate"><span class="pre">covariance()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.decay_linear"><code class="docutils literal notranslate"><span class="pre">decay_linear()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.delay"><code class="docutils literal notranslate"><span class="pre">delay()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.delta"><code class="docutils literal notranslate"><span class="pre">delta()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.ema"><code class="docutils literal notranslate"><span class="pre">ema()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.highcount"><code class="docutils literal notranslate"><span class="pre">highcount()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.highday"><code class="docutils literal notranslate"><span class="pre">highday()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.hump_decay"><code class="docutils literal notranslate"><span class="pre">hump_decay()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.jump_decay"><code class="docutils literal notranslate"><span class="pre">jump_decay()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.log_diff"><code class="docutils literal notranslate"><span class="pre">log_diff()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.low_count"><code class="docutils literal notranslate"><span class="pre">low_count()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.low_day"><code class="docutils literal notranslate"><span class="pre">low_day()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.stddev"><code class="docutils literal notranslate"><span class="pre">stddev()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.sumac"><code class="docutils literal notranslate"><span class="pre">sumac()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.ts_av_diff"><code class="docutils literal notranslate"><span class="pre">ts_av_diff()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.ts_ir"><code class="docutils literal notranslate"><span class="pre">ts_ir()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.ts_kurtosis"><code class="docutils literal notranslate"><span class="pre">ts_kurtosis()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.ts_max"><code class="docutils literal notranslate"><span class="pre">ts_max()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.ts_max_diff"><code class="docutils literal notranslate"><span class="pre">ts_max_diff()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.ts_max_kurt"><code class="docutils literal notranslate"><span class="pre">ts_max_kurt()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.ts_max_mean"><code class="docutils literal notranslate"><span class="pre">ts_max_mean()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.ts_max_skew"><code class="docutils literal notranslate"><span class="pre">ts_max_skew()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.ts_max_std"><code class="docutils literal notranslate"><span class="pre">ts_max_std()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.ts_mean"><code class="docutils literal notranslate"><span class="pre">ts_mean()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.ts_median"><code class="docutils literal notranslate"><span class="pre">ts_median()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.ts_min"><code class="docutils literal notranslate"><span class="pre">ts_min()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.ts_min_diff"><code class="docutils literal notranslate"><span class="pre">ts_min_diff()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.ts_min_kurt"><code class="docutils literal notranslate"><span class="pre">ts_min_kurt()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.ts_min_max_cps"><code class="docutils literal notranslate"><span class="pre">ts_min_max_cps()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.ts_min_mean"><code class="docutils literal notranslate"><span class="pre">ts_min_mean()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.ts_min_skew"><code class="docutils literal notranslate"><span class="pre">ts_min_skew()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.ts_min_std"><code class="docutils literal notranslate"><span class="pre">ts_min_std()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.ts_min_sum"><code class="docutils literal notranslate"><span class="pre">ts_min_sum()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.ts_percentage"><code class="docutils literal notranslate"><span class="pre">ts_percentage()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.ts_rank"><code class="docutils literal notranslate"><span class="pre">ts_rank()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.ts_regression"><code class="docutils literal notranslate"><span class="pre">ts_regression()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.ts_returns"><code class="docutils literal notranslate"><span class="pre">ts_returns()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.ts_scale"><code class="docutils literal notranslate"><span class="pre">ts_scale()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.ts_skewness"><code class="docutils literal notranslate"><span class="pre">ts_skewness()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.ts_weighted_delay"><code class="docutils literal notranslate"><span class="pre">ts_weighted_delay()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.ts_zscore"><code class="docutils literal notranslate"><span class="pre">ts_zscore()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ops_ts.var"><code class="docutils literal notranslate"><span class="pre">var()</span></code></a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../../_sources/main/ops/def/ts.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Xu.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

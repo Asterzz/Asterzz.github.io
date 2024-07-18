@@ -1,0 +1,11 @@
+Operators
+=========
+该部分包含算子定义以及部分性能测试。
+
+算子来源: ``sdev`` , ``我``
+
+.. toctree::
+    :maxdepth: 1
+
+    def/definition
+    speed

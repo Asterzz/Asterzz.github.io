@@ -1,0 +1,64 @@
+Config Part
+===========
+config 为配置文件，``.py``。用于配置整体文件的参数，由多个不同配置块组成，为实验必须文件。
+
+配置块均由 ``dict`` 包裹, 例：``exp_cfg = {'exp_folder': 'path/to/save'}``。
+
+建议放置在 :file:`gen_my/src_batch/gen/config` 目录下，demo也可在这里找到。
+
+Essential Parameters
+--------------------
+
+.. py:data:: exp_cfg
+
+   存储路径配置
+
+   **Parameters**
+   --------------
+   
+   exp_folder : str
+       The main directory 
+   exp_subfolder : str
+       The subdirectory name
+   exp_name : str
+       The exp directory name
+
+   **Example**
+   ------------
+   >>> exp_cfg = {
+   ...     'exp_folder': '~/mnt/gen',
+   ...     'exp_subfolder': 'inday_data',
+   ...     'exp_name': 'exp1',
+   ... }
+
+.. py:data:: global_cfg
+
+    全局设置
+
+    **Parameters**
+
+    freq : str {'inday', 'daily'}
+        The frequency of the data
+
+        * inday
+            for intraday data
+        * daily
+            for daily data, factor should work on next day
+    
+    num_threads : int
+        The number of threads to use in calc factor process
+
+    blacklist : bool
+        Whether to use the blacklist. The default is ``False``. If set to ``True``, the factor will be invalid if the factor expression is already present in other experiments within the same ``exp_subfolder``.
+
+    Example
+    -------
+    >>> global_cfg = {
+    ...     'freq': 'inday',
+    ...     'num_threads': 16,
+    ...     'blacklist': True,
+    ... }
+
+
+
+    

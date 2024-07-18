@@ -1,0 +1,1004 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ops_arithmetic &#8212; gen_my 0.2.1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=362ab14a" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=0178e9a8" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=37f418d5"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/ops_arithmetic';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">gen_my 0.2.1 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../main/user_guide/user_guide.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../main/ops/operators.html">
+    Operators
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../main/TODO.html">
+    TODO LIST
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../main/user_guide/user_guide.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../main/ops/operators.html">
+    Operators
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../main/TODO.html">
+    TODO LIST
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">ops_arithmetic</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for ops_arithmetic</h1><div class="highlight"><pre>
+<span></span><span class="c1"># import cython part</span>
+<span class="c1"># from arithmetic_ops import *</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;src_batch&#39;</span><span class="p">,</span> <span class="s1">&#39;gen&#39;</span><span class="p">,</span> <span class="s1">&#39;fake_sdev&#39;</span><span class="p">))</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="c1"># import sdev part</span>
+<span class="kn">import</span> <span class="nn">sdev</span>
+
+<div class="viewcode-block" id="abs">
+<a class="viewcode-back" href="../main/ops/def/arithmetic.html#ops_arithmetic.abs">[docs]</a>
+<span class="k">def</span> <span class="nf">abs</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the abs value of every element in ndarray data(index-symbols;cols-time)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent symbols cols represent time</span>
+<span class="sd">        </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    abs    </span>
+<span class="sd">        An numpy ndarray of the same shape,the abs value of input</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="exp">
+<a class="viewcode-back" href="../main/ops/def/arithmetic.html#ops_arithmetic.exp">[docs]</a>
+<span class="k">def</span> <span class="nf">exp</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the exp value of every element in ndarray data(index-symbols;cols-time)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent symbols cols represent time</span>
+<span class="sd">        </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    exp    </span>
+<span class="sd">        An numpy ndarray of the same shape,the exp value of input</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="log">
+<a class="viewcode-back" href="../main/ops/def/arithmetic.html#ops_arithmetic.log">[docs]</a>
+<span class="k">def</span> <span class="nf">log</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return a ndarray whose each element is the log_e of input matrix</span>
+
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent symbols cols represent time</span>
+<span class="sd">        </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    log    </span>
+<span class="sd">        An numpy ndarray of the same shape</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="log2">
+<a class="viewcode-back" href="../main/ops/def/arithmetic.html#ops_arithmetic.log2">[docs]</a>
+<span class="k">def</span> <span class="nf">log2</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return a ndarray whose each element is the log_2 of input matrix</span>
+
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent symbols cols represent time</span>
+<span class="sd">        </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    log2    </span>
+<span class="sd">        An numpy ndarray of the same shape</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="log10">
+<a class="viewcode-back" href="../main/ops/def/arithmetic.html#ops_arithmetic.log10">[docs]</a>
+<span class="k">def</span> <span class="nf">log10</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return a ndarray whose each element is the log_10 of input matrix</span>
+
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent symbols cols represent time</span>
+<span class="sd">        </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    log10    </span>
+<span class="sd">        An numpy ndarray of the same shape</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="s_log_lp">
+<a class="viewcode-back" href="../main/ops/def/arithmetic.html#ops_arithmetic.s_log_lp">[docs]</a>
+<span class="k">def</span> <span class="nf">s_log_lp</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return sign(x) * log(1 + abs(x)) of every element in ndarray data(index-symbols;cols-time)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    </span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent symbols cols represent time</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    log_lp    </span>
+<span class="sd">        An numpy ndarray of the same shape, the sign(x) * log(1 + abs(x)) of input</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">log_lp</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="s_log2_lp">
+<a class="viewcode-back" href="../main/ops/def/arithmetic.html#ops_arithmetic.s_log2_lp">[docs]</a>
+<span class="k">def</span> <span class="nf">s_log2_lp</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return sign(x) * log2(1 + abs(x)) of every element in ndarray data(index-symbols;cols-time)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    </span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent symbols cols represent time</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    log2_lp    </span>
+<span class="sd">        An numpy ndarray of the same shape, the sign(x) * log2(1 + abs(x)) of input</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">log2_lp</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="s_log10_lp">
+<a class="viewcode-back" href="../main/ops/def/arithmetic.html#ops_arithmetic.s_log10_lp">[docs]</a>
+<span class="k">def</span> <span class="nf">s_log10_lp</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return sign(x) * log10(1 + abs(x)) of every element in ndarray data(index-symbols;cols-time)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    </span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent symbols cols represent time</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    log10_lp    </span>
+<span class="sd">        An numpy ndarray of the same shape, the sign(x) * log10(1 + abs(x)) of input</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">log10_lp</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="frac">
+<a class="viewcode-back" href="../main/ops/def/arithmetic.html#ops_arithmetic.frac">[docs]</a>
+<span class="k">def</span> <span class="nf">frac</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the fractional part of every element in ndarray data(index-symbols;cols-time)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    </span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent symbols cols represent time</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    frac    </span>
+<span class="sd">        An numpy ndarray of the same shape, the fractional part of input</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">frac</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="inverse">
+<a class="viewcode-back" href="../main/ops/def/arithmetic.html#ops_arithmetic.inverse">[docs]</a>
+<span class="k">def</span> <span class="nf">inverse</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return reciprocal of every element in ndarray data(index-symbols;cols-time)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    </span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent symbols cols represent time</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    inverse    </span>
+<span class="sd">        An numpy ndarray of the same shape, the reciprocal of input</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">inverse</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span></div>
+
+
+
+
+<div class="viewcode-block" id="reverse">
+<a class="viewcode-back" href="../main/ops/def/arithmetic.html#ops_arithmetic.reverse">[docs]</a>
+<span class="k">def</span> <span class="nf">reverse</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return inverse of every element in ndarray data(index-symbols;cols-time)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    </span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent symbols cols represent time</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    reverse    </span>
+<span class="sd">        An numpy ndarray of the same shape, the inverse of input</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">reverse</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="signed_sqrt">
+<a class="viewcode-back" href="../main/ops/def/arithmetic.html#ops_arithmetic.signed_sqrt">[docs]</a>
+<span class="k">def</span> <span class="nf">signed_sqrt</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the square root of the absolute value of the input, multiplied by the sign of of every element in ndarray data(index-symbols;cols-time)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    </span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent symbols cols represent time</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    signed_sqrt    </span>
+<span class="sd">        An numpy ndarray of the same shape, the square root of the absolute value of the input, multiplied by the sign of the input</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">signed_sqrt</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="sign">
+<a class="viewcode-back" href="../main/ops/def/arithmetic.html#ops_arithmetic.sign">[docs]</a>
+<span class="k">def</span> <span class="nf">sign</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the sign value of every element in ndarray data(index-time;cols-symbols)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    </span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent symbols cols represent time</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    sign    </span>
+<span class="sd">        An numpy ndarray of the same shape,the sign value of input</span>
+
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="signed_power">
+<a class="viewcode-back" href="../main/ops/def/arithmetic.html#ops_arithmetic.signed_power">[docs]</a>
+<span class="k">def</span> <span class="nf">signed_power</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the sign(x)*(x**t), x is the element of ndarray data(index-time;cols-symbols)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    </span>
+<span class="sd">    arr : ndarray</span>
+<span class="sd">        index represent symbols cols represent time</span>
+<span class="sd">    t : int or float</span>
+<span class="sd">        the power value</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    signed_power    </span>
+<span class="sd">        An numpy ndarray of the same shape,signed power of input</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">signed_power</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="add">
+<a class="viewcode-back" href="../main/ops/def/arithmetic.html#ops_arithmetic.add">[docs]</a>
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the element added of ndarray data1(index-symbols;cols-time) and ndarray data2(index-symbols;cols-time)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    </span>
+<span class="sd">    arr1 : ndarray</span>
+<span class="sd">        index represent symbols cols represent time</span>
+<span class="sd">    arr2 : ndarray</span>
+<span class="sd">        index represent symbols cols represent time</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    add    </span>
+<span class="sd">        An numpy ndarray of the same shape, the sum of input</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="subtract">
+<a class="viewcode-back" href="../main/ops/def/arithmetic.html#ops_arithmetic.subtract">[docs]</a>
+<span class="k">def</span> <span class="nf">subtract</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the element subtracted of ndarray data1(index-symbols;cols-time) and ndarray data2(index-symbols;cols-time)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    </span>
+<span class="sd">    arr1 : ndarray</span>
+<span class="sd">        index represent symbols cols represent time</span>
+<span class="sd">    arr2 : ndarray</span>
+<span class="sd">        index represent symbols cols represent time</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    subtract    </span>
+<span class="sd">        An numpy ndarray of the same shape, the difference of input</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="multiply">
+<a class="viewcode-back" href="../main/ops/def/arithmetic.html#ops_arithmetic.multiply">[docs]</a>
+<span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return a ndarray whose each element is the product of all input matrix</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    </span>
+<span class="sd">    arr1 : ndarray</span>
+<span class="sd">        index represent symbols cols represent time</span>
+<span class="sd">    arr2 : ndarray</span>
+<span class="sd">        index represent symbols cols represent time</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    multiply    </span>
+<span class="sd">        An numpy ndarray of the same shape, the product of input</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="divide">
+<a class="viewcode-back" href="../main/ops/def/arithmetic.html#ops_arithmetic.divide">[docs]</a>
+<span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return a ndarray whose each element is the division of all input matrix</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    </span>
+<span class="sd">    arr1 : ndarray</span>
+<span class="sd">        index represent symbols cols represent time</span>
+<span class="sd">    arr2 : ndarray</span>
+<span class="sd">        index represent symbols cols represent time</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    divide    </span>
+<span class="sd">        An numpy ndarray of the same shape, the division of input</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="floordiv">
+<a class="viewcode-back" href="../main/ops/def/arithmetic.html#ops_arithmetic.floordiv">[docs]</a>
+<span class="k">def</span> <span class="nf">floordiv</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the rounded down value of each element of ndarray arr1(index-symbols;cols-time) divided by</span>
+<span class="sd">    the rounded down value of each element of ndarray arr2(index-symbols;cols-time)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    </span>
+<span class="sd">    arr1 : ndarray</span>
+<span class="sd">        index represent symbols cols represent time</span>
+<span class="sd">    arr2 : ndarray</span>
+<span class="sd">        index represent symbols cols represent time</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    floordiv    </span>
+<span class="sd">        An numpy ndarray of the same shape, the floor division of input</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">floordiv</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="weight">
+<a class="viewcode-back" href="../main/ops/def/arithmetic.html#ops_arithmetic.weight">[docs]</a>
+<span class="k">def</span> <span class="nf">weight</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">,</span> <span class="n">w</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return w * arr1 + (1 - w) * arr2</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    </span>
+<span class="sd">    arr1 : ndarray</span>
+<span class="sd">        index represent symbols cols represent time</span>
+<span class="sd">    arr2 : ndarray</span>
+<span class="sd">        index represent symbols cols represent time</span>
+<span class="sd">    w : float</span>
+<span class="sd">        the weight</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    weight    </span>
+<span class="sd">        An numpy ndarray of the same shape, the weighted sum of input</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">weight</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="mincross">
+<a class="viewcode-back" href="../main/ops/def/arithmetic.html#ops_arithmetic.mincross">[docs]</a>
+<span class="k">def</span> <span class="nf">mincross</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the element min of ndarray arr1(index-time;cols-symbols) and ndarray arr2(index-time;cols-symbols)</span>
+
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    </span>
+<span class="sd">    arr1 : ndarray</span>
+<span class="sd">        index represent symbols cols represent time</span>
+<span class="sd">    arr2 : ndarray</span>
+<span class="sd">        index represent symbols cols represent time</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    mincross    </span>
+<span class="sd">        An numpy ndarray of the same shape, the minimum value of input</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">mincross</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="maxcross">
+<a class="viewcode-back" href="../main/ops/def/arithmetic.html#ops_arithmetic.maxcross">[docs]</a>
+<span class="k">def</span> <span class="nf">maxcross</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the element max of ndarray arr1(index-time;cols-symbols) and ndarray arr2(index-time;cols-symbols)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    </span>
+<span class="sd">    arr1 : ndarray</span>
+<span class="sd">        index represent symbols cols represent time</span>
+<span class="sd">    arr2 : ndarray</span>
+<span class="sd">        index represent symbols cols represent time</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    maxcross    </span>
+<span class="sd">        An numpy ndarray of the same shape, the maximum value of input</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">maxcross</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="power">
+<a class="viewcode-back" href="../main/ops/def/arithmetic.html#ops_arithmetic.power">[docs]</a>
+<span class="k">def</span> <span class="nf">power</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``sdev`` , return the value of arr1 raised to the power of arr2(x^y)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    </span>
+<span class="sd">    arr1 : ndarray</span>
+<span class="sd">        index represent symbols cols represent time</span>
+<span class="sd">    arr2 : ndarray</span>
+<span class="sd">        index represent symbols cols represent time</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    power    </span>
+<span class="sd">        An numpy ndarray of the same shape, the value of arr1 raised to the power of arr2(x^y)</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="logaddexp">
+<a class="viewcode-back" href="../main/ops/def/arithmetic.html#ops_arithmetic.logaddexp">[docs]</a>
+<span class="k">def</span> <span class="nf">logaddexp</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``numpy`` , return the log(exp(arr1) + exp(arr2)) of every element in ndarray data(index-symbols;cols-time)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    </span>
+<span class="sd">    arr1 : ndarray</span>
+<span class="sd">        index represent symbols cols represent time</span>
+<span class="sd">    arr2 : ndarray</span>
+<span class="sd">        index represent symbols cols represent time</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    logaddexp    </span>
+<span class="sd">        An numpy ndarray of the same shape, the log(exp(arr1) + exp(arr2)) of input</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">logaddexp</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="logaddexp2">
+<a class="viewcode-back" href="../main/ops/def/arithmetic.html#ops_arithmetic.logaddexp2">[docs]</a>
+<span class="k">def</span> <span class="nf">logaddexp2</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``numpy`` , return the log2(2^arr1 + 2^arr2) of every element in ndarray data(index-symbols;cols-time)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    </span>
+<span class="sd">    arr1 : ndarray</span>
+<span class="sd">        index represent symbols cols represent time</span>
+<span class="sd">    arr2 : ndarray</span>
+<span class="sd">        index represent symbols cols represent time</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    logaddexp2    </span>
+<span class="sd">        An numpy ndarray of the same shape, the log2(2^arr1 + 2^arr2) of input</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">logaddexp2</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">)</span></div>
+
+
+
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;abs&#39;</span><span class="p">,</span> <span class="s1">&#39;exp&#39;</span><span class="p">,</span> <span class="s1">&#39;log&#39;</span><span class="p">,</span> <span class="s1">&#39;log2&#39;</span><span class="p">,</span> <span class="s1">&#39;log10&#39;</span><span class="p">,</span> <span class="s1">&#39;s_log_lp&#39;</span><span class="p">,</span> <span class="s1">&#39;s_log2_lp&#39;</span><span class="p">,</span> <span class="s1">&#39;s_log10_lp&#39;</span><span class="p">,</span> <span class="s1">&#39;frac&#39;</span><span class="p">,</span> <span class="s1">&#39;inverse&#39;</span><span class="p">,</span> <span class="s1">&#39;reverse&#39;</span><span class="p">,</span> <span class="s1">&#39;signed_sqrt&#39;</span><span class="p">,</span> <span class="s1">&#39;sign&#39;</span><span class="p">,</span> <span class="s1">&#39;signed_power&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;add&#39;</span><span class="p">,</span> <span class="s1">&#39;subtract&#39;</span><span class="p">,</span> <span class="s1">&#39;multiply&#39;</span><span class="p">,</span> <span class="s1">&#39;divide&#39;</span><span class="p">,</span> <span class="s1">&#39;floordiv&#39;</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="s1">&#39;mincross&#39;</span><span class="p">,</span> <span class="s1">&#39;maxcross&#39;</span><span class="p">,</span> <span class="s1">&#39;power&#39;</span><span class="p">,</span> <span class="s1">&#39;logaddexp&#39;</span><span class="p">,</span> <span class="s1">&#39;logaddexp2&#39;</span>
+    
+<span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;arithmetic:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">__all__</span><span class="si">}</span><span class="s1"> is imported&#39;</span><span class="p">)</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Xu.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

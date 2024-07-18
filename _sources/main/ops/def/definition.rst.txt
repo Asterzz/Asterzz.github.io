@@ -1,0 +1,13 @@
+Definition for ops
+==============================
+
+有关cython部分的ops代码可在 ``gen_my/src_batch/gen/tools/ops/cython`` 下找到
+
+
+.. toctree::
+    :maxdepth: 2
+
+    arithmetic
+    trans
+    ts
+    cross

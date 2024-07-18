@@ -1,0 +1,7 @@
+Arithmetic 
+====================
+
+.. automodule:: ops_arithmetic
+    :members:
+    :undoc-members:
+    :show-inheritance:

@@ -1,0 +1,7 @@
+Time-Series
+================================
+
+.. automodule:: ops_ts
+    :members:
+    :undoc-members:
+    :show-inheritance:
