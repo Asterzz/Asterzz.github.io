@@ -367,7 +367,7 @@ document.write(`
 <span class="sd">        </span>
 <span class="sd">    axis : default 1</span>
 <span class="sd">        axis of calculation, 1 for row, 0 for cols</span>
-<span class="sd">        </span>
+
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    stddev</span>
@@ -1477,10 +1477,9 @@ document.write(`
 <a class="viewcode-back" href="../main/ops/def/ts.html#ops_ts.ts_regression">[docs]</a>
 <span class="k">def</span> <span class="nf">ts_regression</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">RETTYPE</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    ``sdev`` , </span>
-<span class="sd">    ts_regression(x, y, n, RETTYPE)</span>
-<span class="sd">    given linear regression y = b * x + a,</span>
-<span class="sd">    output is (based on RETTYPE):</span>
+<span class="sd">    ``sdev``  , Perform time series regression.</span>
+
+<span class="sd">    Given linear regression y = b * x + a, output is (based on RETTYPE):</span>
 <span class="sd">        0 = Y - EY</span>
 <span class="sd">        1 = a</span>
 <span class="sd">        2 = b</span>
@@ -1491,33 +1490,34 @@ document.write(`
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    arr1 : ndarray</span>
-<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        Index represents time, columns represent symbols.</span>
 <span class="sd">        </span>
 <span class="sd">    arr2 : ndarray</span>
-<span class="sd">        index represent time cols represent symbols</span>
+<span class="sd">        Index represents time, columns represent symbols.</span>
 <span class="sd">        </span>
 <span class="sd">    window : int or float</span>
-<span class="sd">        will take int(abs(window)) as window size; if abs(window)&lt;1 will take 1</span>
+<span class="sd">        Will take int(abs(window)) as window size; if abs(window) &lt; 1, will take 1.</span>
 <span class="sd">    </span>
 <span class="sd">    RETTYPE : int</span>
-<span class="sd">        0 = Y - EY</span>
-<span class="sd">        1 = a</span>
-<span class="sd">        2 = b</span>
-<span class="sd">        3 = Ey</span>
-<span class="sd">        4 = square</span>
-<span class="sd">        5 = adjust r square</span>
+<span class="sd">        Output type:</span>
+<span class="sd">            0 = Y - EY</span>
+<span class="sd">            1 = a</span>
+<span class="sd">            2 = b</span>
+<span class="sd">            3 = Ey</span>
+<span class="sd">            4 = square</span>
+<span class="sd">            5 = adjust r square</span>
 <span class="sd">        </span>
-<span class="sd">    axis : default 1</span>
-<span class="sd">        axis of calculation, 1 for row, 0 for cols</span>
+<span class="sd">    axis : int, optional</span>
+<span class="sd">        Axis of calculation, 1 for row, 0 for cols. Default is 1.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
-<span class="sd">    ts_regression    </span>
-<span class="sd">        An numpy ndarray of the same shape,the the time series regression of input1 and input2</span>
+<span class="sd">    ndarray</span>
+<span class="sd">        A numpy ndarray of the same shape, the time series regression of input1 and input2.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-
     <span class="k">return</span> <span class="n">sdev</span><span class="o">.</span><span class="n">ts_regression</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">RETTYPE</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
+
 
 
 
